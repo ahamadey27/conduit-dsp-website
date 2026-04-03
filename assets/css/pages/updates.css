@@ -1,0 +1,97 @@
+.updates-header {
+  padding-top: var(--space-16);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-12);
+  padding-bottom: var(--space-8);
+}
+
+.updates-header h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.updates-header p {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.updates-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Accordion */
+.update-accordion {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-4);
+}
+
+.update-accordion__trigger {
+  cursor: pointer;
+  list-style: none;
+  padding: var(--space-4) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.update-accordion__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.update-accordion__name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+}
+
+.update-accordion__arrow {
+  color: var(--text-muted);
+  transition: transform 200ms;
+}
+
+.update-accordion[open] .update-accordion__arrow {
+  transform: rotate(180deg);
+}
+
+.update-accordion__content {
+  padding: var(--space-4) 0 var(--space-8);
+}
+
+/* Table */
+.update-table {
+  width: 100%;
+}
+
+.update-table th {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-2) var(--space-4) var(--space-2) 0;
+}
+
+.update-table td {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  padding: var(--space-3) var(--space-4) var(--space-3) 0;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.update-table td:first-child {
+  width: 120px;
+  white-space: nowrap;
+}
+
+.update-table tbody tr:nth-child(odd) {
+  background: var(--bg-secondary);
+}

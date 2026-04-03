@@ -1,0 +1,95 @@
+/* Plugin cards grid */
+.home-plugins {
+  padding-top: var(--space-16);
+}
+
+.home-plugins__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+.plugin-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: border-color 150ms;
+}
+
+.plugin-card:hover {
+  border-color: var(--accent);
+}
+
+.plugin-card__image {
+  display: block;
+}
+
+.plugin-card__image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.plugin-card__body {
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+.plugin-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.plugin-card__name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.plugin-card__name a:hover {
+  text-decoration: none;
+}
+
+.plugin-card__price {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  margin: var(--space-2) 0 var(--space-4);
+}
+
+/* About section */
+.home-about {
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-24);
+}
+
+.about-banner {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.home-about__text {
+  padding: var(--space-12) 0;
+  max-width: 680px;
+}
+
+.home-about__text p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.home-about__text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .about-banner {
+    height: 250px;
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conduit DSP — Audio Plugins</title>
+  <title>My Account — Conduit DSP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
   <link rel="stylesheet" href="/assets/css/cart.css">
-  <link rel="stylesheet" href="/assets/css/pages/home.css">
+  <link rel="stylesheet" href="/assets/css/pages/account.css">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
       </div>
       <nav class="site-nav" aria-label="Main navigation">
         <ul class="site-nav__list">
-          <li class="nav-item active"><a href="/">Home</a></li>
+          <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown">
             <a href="/plugins/">Plugins</a>
             <div class="dropdown-menu">
@@ -45,53 +45,54 @@
             </div>
           </li>
           <li class="nav-item"><a href="/updates/">Updates</a></li>
-          <li class="nav-item"><a href="/account/">Account</a></li>
+          <li class="nav-item active"><a href="/account/">Account</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="main-content">
-    <section class="home-plugins">
-      <div class="container">
-        <div class="home-plugins__grid">
+    <div class="container">
+      <h1 class="account-title">My Account</h1>
 
-          <article class="plugin-card">
-            <a href="/plugins/robin-control/" class="plugin-card__image">
-              <img src="/assets/images/plugin-robin-control.png" alt="Robin Control plugin interface">
-            </a>
-            <div class="plugin-card__body">
-              <h2 class="plugin-card__name"><a href="/plugins/robin-control/">Robin Control</a></h2>
-              <span class="plugin-card__price">$49.00</span>
-              <button class="btn btn--add-cart" data-product-id="robin-control" data-price="49.00" data-name="Robin Control">Add to Cart</button>
+      <div class="account-columns">
+        <div class="account-panel">
+          <h2>Login</h2>
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="••••••••">
+          </div>
+          <div class="form-group form-group--inline">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+          </div>
+          <button class="btn btn--primary" type="button">Login</button>
+          <a href="#" class="account-panel__forgot">Don't know your password?</a>
+        </div>
+
+        <div class="account-panel">
+          <h2>Register</h2>
+          <div class="form-group">
+            <label for="reg-email">Email Address</label>
+            <input type="email" id="reg-email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" placeholder="••••••••">
+          </div>
+          <div class="form-group">
+            <div class="captcha-placeholder">
+              [ reCAPTCHA / hCaptcha widget — add script when integrating Lemon Squeezy ]
             </div>
-          </article>
-
-          <article class="plugin-card">
-            <a href="/plugins/robin-control-lite/" class="plugin-card__image">
-              <img src="/assets/images/plugin-robin-control-lite.png" alt="Robin Control Lite plugin interface">
-            </a>
-            <div class="plugin-card__body">
-              <h2 class="plugin-card__name"><a href="/plugins/robin-control-lite/">Robin Control Lite</a></h2>
-              <span class="plugin-card__price">Free</span>
-              <button class="btn btn--add-cart btn--outline" data-product-id="robin-control-lite" data-price="0" data-name="Robin Control Lite">Get for Free</button>
-            </div>
-          </article>
-
+          </div>
+          <button class="btn btn--primary" type="button">Register</button>
         </div>
       </div>
-    </section>
-
-    <section class="home-about">
-      <div class="container">
-        <img src="/assets/images/banner-about.jpg" alt="About Conduit DSP" class="about-banner">
-        <div class="home-about__text">
-          <p>Conduit DSP was founded with one goal: to build tools that get out of your way and let the music happen. We make plugins for producers, engineers, and sound designers who value precision over presets.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-          <p>Every plugin we ship is tested obsessively, built to last, and priced to be accessible. We are a small operation and we intend to stay that way — focused, intentional, and always listening.</p>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
   <footer class="site-footer">

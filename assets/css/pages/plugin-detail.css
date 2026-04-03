@@ -1,0 +1,108 @@
+.plugin-detail {
+  padding-top: var(--space-16);
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.plugin-detail__hero {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  background: var(--bg-secondary);
+  margin-bottom: var(--space-8);
+  border-radius: var(--border-radius);
+}
+
+.plugin-detail__header {
+  margin-bottom: var(--space-8);
+}
+
+.plugin-detail__name {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+}
+
+.plugin-detail__tagline {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+}
+
+.plugin-detail__price {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+  margin: var(--space-4) 0;
+}
+
+.plugin-detail__header .btn {
+  margin-top: var(--space-2);
+}
+
+/* Video */
+.plugin-detail__video {
+  margin: var(--space-12) 0;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.plugin-detail__video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Description */
+.plugin-detail__description {
+  max-width: 680px;
+  margin-bottom: var(--space-8);
+}
+
+.plugin-detail__description p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.plugin-detail__description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Features */
+.plugin-detail__features {
+  margin-bottom: var(--space-16);
+}
+
+.plugin-detail__features h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.plugin-detail__features ul {
+  padding-left: var(--space-4);
+}
+
+.plugin-detail__features li {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-2);
+  list-style: none;
+}
+
+.plugin-detail__features li::before {
+  content: "— ";
+  color: var(--accent);
+}

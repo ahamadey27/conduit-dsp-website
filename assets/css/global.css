@@ -1,13 +1,13 @@
 :root {
-  --bg-primary:     #0e0e0e;
-  --bg-secondary:   #181818;
-  --bg-elevated:    #222222;
-  --border:         #2a2a2a;
-  --text-primary:   #f0f0f0;
-  --text-muted:     #888888;
-  --text-dim:       #555555;
-  --accent:         #c8f04a;
-  --accent-hover:   #b0d93a;
+  --bg-primary:     #D3D9D4;
+  --bg-secondary:   #C5CCC6;
+  --bg-elevated:    #B8BFB9;
+  --border:         #748D92;
+  --text-primary:   #212A31;
+  --text-muted:     #2E3944;
+  --text-dim:       #748D92;
+  --accent:         #124E66;
+  --accent-hover:   #0D3A4D;
   --danger:         #e05555;
   --white:          #ffffff;
 
@@ -83,13 +83,13 @@ a:hover {
 
 .btn--primary {
   background: var(--accent);
-  color: #000;
+  color: #fff;
 }
 .btn--primary:hover { background: var(--accent-hover); }
 
 .btn--add-cart {
   background: var(--accent);
-  color: #000;
+  color: #fff;
   width: 100%;
   text-align: center;
 }
@@ -102,7 +102,7 @@ a:hover {
 }
 .btn--outline:hover {
   background: var(--accent);
-  color: #000;
+  color: #fff;
 }
 
 .btn--lg {

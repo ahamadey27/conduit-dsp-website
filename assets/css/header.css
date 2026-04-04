@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(14, 14, 14, 0.95);
+  background: rgba(211, 217, 212, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
@@ -65,7 +65,7 @@
   width: 20px;
   height: 20px;
   background: var(--accent);
-  color: #000;
+  color: #fff;
   font-size: var(--text-xs);
   font-weight: 700;
   border-radius: 50%;

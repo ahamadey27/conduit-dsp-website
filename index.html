@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ==================== HEAD: Meta, Fonts, Stylesheets ==================== -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conduit DSP — Audio Plugins</title>
+  <!-- Google Fonts: IBM Plex Mono (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
@@ -16,6 +19,7 @@
 </head>
 <body>
 
+  <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
     <div class="site-header__inner container">
       <div class="site-header__top">
@@ -51,22 +55,15 @@
     </div>
   </header>
 
+  <!-- ==================== MAIN CONTENT ==================== -->
   <main class="main-content">
+
+    <!-- ========== Plugin Cards Grid ========== -->
     <section class="home-plugins">
       <div class="container">
         <div class="home-plugins__grid">
 
-          <article class="plugin-card">
-            <a href="/plugins/robin-control/" class="plugin-card__image">
-              <img src="/assets/images/plugin-robin-control.png" alt="Robin Control plugin interface">
-            </a>
-            <div class="plugin-card__body">
-              <h2 class="plugin-card__name"><a href="/plugins/robin-control/">Robin Control</a></h2>
-              <span class="plugin-card__price">$49.00</span>
-              <button class="btn btn--add-cart" data-product-id="robin-control" data-price="49.00" data-name="Robin Control">Add to Cart</button>
-            </div>
-          </article>
-
+          <!-- Robin Control Lite Card -->
           <article class="plugin-card">
             <a href="/plugins/robin-control-lite/" class="plugin-card__image">
               <img src="/assets/images/plugin-robin-control-lite.png" alt="Robin Control Lite plugin interface">
@@ -78,10 +75,25 @@
             </div>
           </article>
 
+          <!-- Robin Control Card -->
+          <article class="plugin-card">
+            <a href="/plugins/robin-control/" class="plugin-card__image">
+              <img src="/assets/images/plugin-robin-control.png" alt="Robin Control plugin interface">
+            </a>
+            <div class="plugin-card__body">
+              <h2 class="plugin-card__name"><a href="/plugins/robin-control/">Robin Control</a></h2>
+              <span class="plugin-card__price">Coming Soon...</span>
+              <!-- <button class="btn btn--add-cart" data-product-id="robin-control" data-price="49.00" data-name="Robin Control">Add to Cart</button> -->
+            </div>
+          </article>
+
+          
+
         </div>
       </div>
     </section>
 
+    <!-- ========== About Section ========== -->
     <section class="home-about">
       <div class="container">
         <img src="/assets/images/banner-about.jpg" alt="About Conduit DSP" class="about-banner">
@@ -94,6 +106,7 @@
     </section>
   </main>
 
+  <!-- ==================== FOOTER: Info Links, Social Icons, Copyright ==================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
@@ -127,6 +140,7 @@
     </div>
   </footer>
 
+  <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/nav.js"></script>
 </body>

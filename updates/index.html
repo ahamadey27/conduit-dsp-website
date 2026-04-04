@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ==================== HEAD: Meta, Fonts, Stylesheets ==================== -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Updates — Conduit DSP</title>
+  <!-- Google Fonts: IBM Plex Mono (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
@@ -16,6 +19,7 @@
 </head>
 <body>
 
+  <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
     <div class="site-header__inner container">
       <div class="site-header__top">
@@ -51,13 +55,17 @@
     </div>
   </header>
 
+  <!-- ==================== MAIN CONTENT ==================== -->
   <main class="main-content">
     <div class="updates-container">
+
+      <!-- ========== Page Header ========== -->
       <div class="updates-header">
         <h1>Plugin Updates</h1>
         <p>All updates are available from <strong>My Account &gt; Downloads</strong>.</p>
       </div>
 
+      <!-- ========== Robin Control Update Accordion ========== -->
       <details class="update-accordion" open>
         <summary class="update-accordion__trigger">
           <span class="update-accordion__name">Robin Control</span>
@@ -86,6 +94,7 @@
         </div>
       </details>
 
+      <!-- ========== Robin Control Lite Update Accordion ========== -->
       <details class="update-accordion">
         <summary class="update-accordion__trigger">
           <span class="update-accordion__name">Robin Control Lite</span>
@@ -114,6 +123,7 @@
     </div>
   </main>
 
+  <!-- ==================== FOOTER: Info Links, Social Icons, Copyright ==================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
@@ -147,6 +157,7 @@
     </div>
   </footer>
 
+  <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/nav.js"></script>
 </body>

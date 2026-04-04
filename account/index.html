@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ==================== HEAD: Meta, Fonts, Stylesheets ==================== -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Account — Conduit DSP</title>
+  <!-- Google Fonts: IBM Plex Mono (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
@@ -16,6 +19,7 @@
 </head>
 <body>
 
+  <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
     <div class="site-header__inner container">
       <div class="site-header__top">
@@ -51,11 +55,14 @@
     </div>
   </header>
 
+  <!-- ==================== MAIN CONTENT ==================== -->
   <main class="main-content">
     <div class="container">
       <h1 class="account-title">My Account</h1>
 
       <div class="account-columns">
+
+        <!-- ========== Login Form (UI stub — Lemon Squeezy handles auth) ========== -->
         <div class="account-panel">
           <h2>Login</h2>
           <div class="form-group">
@@ -74,6 +81,7 @@
           <a href="#" class="account-panel__forgot">Don't know your password?</a>
         </div>
 
+        <!-- ========== Register Form (UI stub — Lemon Squeezy handles auth) ========== -->
         <div class="account-panel">
           <h2>Register</h2>
           <div class="form-group">
@@ -95,6 +103,7 @@
     </div>
   </main>
 
+  <!-- ==================== FOOTER: Info Links, Social Icons, Copyright ==================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
@@ -128,6 +137,7 @@
     </div>
   </footer>
 
+  <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/nav.js"></script>
 </body>

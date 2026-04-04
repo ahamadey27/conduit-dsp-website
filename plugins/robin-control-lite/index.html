@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ==================== HEAD: Meta, Fonts, Stylesheets ==================== -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Robin Control Lite — Conduit DSP</title>
+  <!-- Google Fonts: IBM Plex Mono (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
@@ -16,6 +19,7 @@
 </head>
 <body>
 
+  <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
     <div class="site-header__inner container">
       <div class="site-header__top">
@@ -51,15 +55,18 @@
     </div>
   </header>
 
+  <!-- ==================== MAIN CONTENT ==================== -->
   <main class="main-content">
     <div class="plugin-detail">
 
+      <!-- ========== Hero Image ========== -->
       <img
         src="/assets/images/plugin-robin-control-lite.png"
         alt="Robin Control Lite plugin interface"
         class="plugin-detail__hero"
       >
 
+      <!-- ========== Plugin Name, Tagline, Price, Get for Free Button ========== -->
       <div class="plugin-detail__header">
         <h1 class="plugin-detail__name">Robin Control Lite</h1>
         <p class="plugin-detail__tagline">Free round robin sampling, no strings attached.</p>
@@ -72,6 +79,7 @@
         </button>
       </div>
 
+      <!-- ========== YouTube Video Embed (replace PLACEHOLDER_LITE_VIDEO_ID) ========== -->
       <div class="plugin-detail__video">
         <iframe
           src="https://www.youtube.com/embed/PLACEHOLDER_LITE_VIDEO_ID"
@@ -80,11 +88,13 @@
         </iframe>
       </div>
 
+      <!-- ========== Description Text ========== -->
       <div class="plugin-detail__description">
         <p>Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
         <p>Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
       </div>
 
+      <!-- ========== Features List ========== -->
       <div class="plugin-detail__features">
         <h3>Description:</h3>
         <ul>
@@ -104,6 +114,7 @@
     </div>
   </main>
 
+  <!-- ==================== FOOTER: Info Links, Social Icons, Copyright ==================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
@@ -137,6 +148,7 @@
     </div>
   </footer>
 
+  <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/nav.js"></script>
 </body>

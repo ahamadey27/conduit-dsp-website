@@ -82,26 +82,26 @@ a:hover {
 }
 
 .btn--primary {
-  background: var(--accent);
+  background: #1B4965;
   color: #fff;
 }
-.btn--primary:hover { background: var(--accent-hover); }
+.btn--primary:hover { background: #153A52; }
 
 .btn--add-cart {
-  background: var(--accent);
+  background: #1B4965;
   color: #fff;
   width: 100%;
   text-align: center;
 }
-.btn--add-cart:hover { background: var(--accent-hover); }
+.btn--add-cart:hover { background: #153A52; }
 
 .btn--outline {
   background: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
+  border: 2px solid #1B4965;
+  color: #1B4965;
 }
 .btn--outline:hover {
-  background: var(--accent);
+  background: #1B4965;
   color: #fff;
 }
 

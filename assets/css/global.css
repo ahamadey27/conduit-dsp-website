@@ -35,7 +35,7 @@
   --space-24: 6rem;
 
   --max-width: 1200px;
-  --header-height: 80px;
+  --header-height: 120px;
   --border-radius: 4px;
 }
 
@@ -44,6 +44,9 @@ body {
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: var(--text-base);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a:hover {
@@ -59,6 +62,8 @@ a:hover {
 
 .main-content {
   padding-top: var(--header-height);
+  padding-bottom: var(--space-16);
+  flex: 1;
 }
 
 /* Buttons */

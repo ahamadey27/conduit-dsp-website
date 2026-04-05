@@ -1,13 +1,13 @@
 :root {
   --bg-primary:     #F4FCFB;
-  --bg-secondary:   #E8F4F2;
-  --bg-elevated:    #DCE9E7;
-  --border:         #ACBCBF;
-  --text-primary:   #243C4C;
-  --text-muted:     #698696;
-  --text-dim:       #ACBCBF;
-  --accent:         #5289AD;
-  --accent-hover:   #3F7199;
+  --bg-secondary:   #E6F1EF;
+  --bg-elevated:    #D8E6E3;
+  --border:         #9FB8B4;
+  --text-primary:   #1E3A3A;
+  --text-muted:     #4E6E6E;
+  --text-dim:       #9FB8B4;
+  --accent:         #2D7A7A;
+  --accent-hover:   #236363;
   --danger:         #e05555;
   --white:          #ffffff;
 
@@ -82,26 +82,26 @@ a:hover {
 }
 
 .btn--primary {
-  background: #1B4965;
+  background: #1F5C5C;
   color: #fff;
 }
-.btn--primary:hover { background: #153A52; }
+.btn--primary:hover { background: #184D4D; }
 
 .btn--add-cart {
-  background: #1B4965;
+  background: #1F5C5C;
   color: #fff;
   width: 100%;
   text-align: center;
 }
-.btn--add-cart:hover { background: #153A52; }
+.btn--add-cart:hover { background: #184D4D; }
 
 .btn--outline {
   background: transparent;
-  border: 2px solid #1B4965;
-  color: #1B4965;
+  border: 2px solid #1F5C5C;
+  color: #1F5C5C;
 }
 .btn--outline:hover {
-  background: #1B4965;
+  background: #1F5C5C;
   color: #fff;
 }
 

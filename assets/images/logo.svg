@@ -1,0 +1,33 @@
+<svg width="800" height="160" viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Four LED VU meters - thicker bars -->
+  <g transform="translate(40, 50)">
+    <!-- Bar 1 - 4 segments, 6px wide -->
+    <rect x="0" y="24" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="0" y="32" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="0" y="40" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="0" y="48" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    
+    <!-- Bar 2 - 6 segments (full), 6px wide -->
+    <rect x="10" y="8" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="10" y="16" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="10" y="24" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="10" y="32" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="10" y="40" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="10" y="48" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    
+    <!-- Bar 3 - 5 segments, 6px wide -->
+    <rect x="20" y="16" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="20" y="24" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="20" y="32" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="20" y="40" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="20" y="48" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    
+    <!-- Bar 4 - 3 segments, 6px wide -->
+    <rect x="30" y="32" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="30" y="40" width="6" height="5" fill="#2D7A7A" rx="1"/>
+    <rect x="30" y="48" width="6" height="5" fill="#2D7A7A" rx="1"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="90" y="95" style="font-family: monospace; font-size: 64px; fill: #243C4C; font-weight: 500;">conduit.dsp</text>
+</svg>

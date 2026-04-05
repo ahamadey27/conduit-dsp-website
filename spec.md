@@ -859,3 +859,8 @@ Every page uses this shell:
 - **YouTube embeds** use placeholder video IDs. Replace `PLACEHOLDER_VIDEO_ID` with real IDs when available.
 - **Social links** in footer all use `href="#"` — replace with real URLs when available.
 - When building, start with: `global.css` → `header` → `footer` → `home` → `plugins` → `plugin detail` → `updates` → `account`.
+
+---
+
+## 13. Misc
+- Color text for logo: #243C4C

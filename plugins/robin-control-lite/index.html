@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/assets/css/footer.css">
   <link rel="stylesheet" href="/assets/css/cart.css">
   <link rel="stylesheet" href="/assets/css/pages/plugin-detail.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
 </head>
 <body>
 
@@ -75,18 +76,19 @@
                 data-product-id="robin-control-lite"
                 data-price="0"
                 data-name="Robin Control Lite">
-          Get for Free
+          Let me know when it's available! 
         </button>
       </div>
 
       <!-- ========== YouTube Video Embed (replace PLACEHOLDER_LITE_VIDEO_ID) ========== -->
-      <div class="plugin-detail__video">
+       <!--MAKE SURE TO UNCOMMENT ONCE YOUTUBE VIDEO IS AVAILABLE!!!-->
+      <!-- <div class="plugin-detail__video">
         <iframe
           src="https://www.youtube.com/embed/PLACEHOLDER_LITE_VIDEO_ID"
           title="Robin Control Lite Demo"
           allowfullscreen>
         </iframe>
-      </div>
+      </div> -->
 
       <!-- ========== Description Text ========== -->
       <div class="plugin-detail__description">
@@ -148,8 +150,23 @@
     </div>
   </footer>
 
+  <!-- ==================== EMAIL MODAL ==================== -->
+  <div id="email-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h3>Get Robin Control Lite</h3>
+      <p>Enter your email and we'll let you know when it's ready to download.</p>
+      <form class="modal-form">
+        <input type="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn--submit">Send</button>
+      </form>
+      <div class="modal-success">Thanks! We'll be in touch.</div>
+    </div>
+  </div>
+
   <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/modal.js"></script>
 </body>
 </html>

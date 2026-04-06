@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/assets/css/cart.css">
   <link rel="stylesheet" href="/assets/css/pages/home.css">
   <link rel="stylesheet" href="/assets/css/pages/plugins.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
 </head>
 <body>
 
@@ -81,7 +82,7 @@
             <h2 class="plugin-card__name"><a href="/plugins/robin-control-lite/">Robin Control Lite</a></h2>
             <p class="plugin-card__desc">Free round robin sampling, no strings attached.</p>
             <span class="plugin-card__price">Free</span>
-            <button class="btn btn--add-cart btn--outline" data-product-id="robin-control-lite" data-price="0" data-name="Robin Control Lite">Get for Free</button>
+            <button class="btn btn--add-cart btn--outline" data-product-id="robin-control-lite" data-price="0" data-name="Robin Control Lite">Let me know when it's available</button>
           </div>
         </article>
 
@@ -138,8 +139,23 @@
     </div>
   </footer>
 
+  <!-- ==================== EMAIL MODAL ==================== -->
+  <div id="email-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h3>Get Robin Control Lite</h3>
+      <p>Enter your email and we'll let you know when it's ready to download.</p>
+      <form class="modal-form">
+        <input type="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn--submit">Send</button>
+      </form>
+      <div class="modal-success">Thanks! We'll be in touch.</div>
+    </div>
+  </div>
+
   <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/modal.js"></script>
 </body>
 </html>

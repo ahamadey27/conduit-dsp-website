@@ -53,6 +53,8 @@ function handleCurrencyChange(e) {
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.btn--add-cart').forEach(function (btn) {
+    // Skip Robin Control Lite — handled by modal.js
+    if (btn.getAttribute('data-product-id') === 'robin-control-lite') return;
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();

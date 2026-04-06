@@ -8,7 +8,6 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 3px double var(--border);
-  overflow: hidden;
 }
 
 .site-header__inner {

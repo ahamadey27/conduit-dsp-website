@@ -12,7 +12,7 @@
 .plugin-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: var(--border-radius);
+  border-radius: 2px;
   overflow: hidden;
   transition: border-color 150ms;
 }
@@ -61,7 +61,7 @@
 
 /* About section */
 .home-about {
-  border-top: 1px solid var(--border);
+  border-top: 3px double var(--border);
   margin-top: var(--space-24);
 }
 

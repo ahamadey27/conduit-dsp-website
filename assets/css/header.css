@@ -4,10 +4,10 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(244, 252, 251, 0.95);
+  background: rgba(245, 243, 240, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px double var(--border);
 }
 
 .site-header__inner {
@@ -61,7 +61,7 @@
   font-size: var(--text-sm);
   cursor: pointer;
   padding: var(--space-1) var(--space-2);
-  border-radius: var(--border-radius);
+  border-radius: 2px;
 }
 
 #currency-select:focus {
@@ -101,8 +101,8 @@
   font-size: var(--text-sm);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #3A6565;
+  letter-spacing: 0.14em;
+  color: #5C554D;
   text-decoration: none;
   transition: color 150ms;
 }
@@ -128,7 +128,7 @@
   width: 200px;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: var(--border-radius);
+  border-radius: 2px;
   opacity: 0;
   transform: translateY(4px);
   pointer-events: none;

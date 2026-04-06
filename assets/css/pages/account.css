@@ -4,7 +4,7 @@
   color: var(--text-primary);
   margin-bottom: var(--space-12);
   padding-top: var(--space-16);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px double var(--border);
   padding-bottom: var(--space-8);
 }
 
@@ -45,7 +45,7 @@
   width: 100%;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--border-radius);
+  border-radius: 2px;
   padding: var(--space-3) var(--space-4);
   font-family: var(--font-body);
   font-size: var(--text-sm);
@@ -92,7 +92,7 @@
   color: var(--text-dim);
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  border-radius: var(--border-radius);
+  border-radius: 2px;
 }
 
 @media (max-width: 768px) {

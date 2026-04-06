@@ -1,17 +1,17 @@
 :root {
-  --bg-primary:     #F4FCFB;
-  --bg-secondary:   #E6F1EF;
-  --bg-elevated:    #D8E6E3;
-  --border:         #9FB8B4;
-  --text-primary:   #1E3A3A;
-  --text-muted:     #4E6E6E;
-  --text-dim:       #9FB8B4;
+  --bg-primary:     #F5F3F0;
+  --bg-secondary:   #EAE7E2;
+  --bg-elevated:    #DDD9D3;
+  --border:         #B5AFA6;
+  --text-primary:   #2A2520;
+  --text-muted:     #5C554D;
+  --text-dim:       #9B9488;
   --accent:         #2D7A7A;
   --accent-hover:   #236363;
   --danger:         #e05555;
   --white:          #ffffff;
 
-  --font-display: 'IBM Plex Mono', monospace;
+  --font-display: 'DM Serif Display', serif;
   --font-body:    'DM Sans', sans-serif;
 
   --text-xs:   0.75rem;
@@ -74,10 +74,10 @@ a:hover {
   font-size: var(--text-sm);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   cursor: pointer;
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: 2px;
   transition: background 150ms, color 150ms, border-color 150ms;
 }
 
@@ -120,6 +120,7 @@ a:hover {
   font-family: var(--font-display);
   font-size: var(--text-3xl);
   color: var(--text-primary);
+  letter-spacing: 0.02em;
   margin-bottom: var(--space-4);
 }
 

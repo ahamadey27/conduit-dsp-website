@@ -4,7 +4,7 @@
   </style>
   
   <!-- Spread Waveform Symbol - adjusted position -->
-  <g transform="translate(175, 58)">
+  <g transform="translate(40, 58)">
     <line x1="5" y1="20" x2="5" y2="27" stroke="#2D7A7A" stroke-width="3" stroke-linecap="round"/>
     <line x1="13" y1="17" x2="13" y2="30" stroke="#2D7A7A" stroke-width="3" stroke-linecap="round"/>
     <line x1="21" y1="13" x2="21" y2="34" stroke="#2D7A7A" stroke-width="3" stroke-linecap="round"/>
@@ -17,5 +17,5 @@
   </g>
   
   <!-- Text with IBM Plex Sans -->
-  <text x="262" y="95" style="font-family: 'IBM Plex Sans', sans-serif; font-size: 56px; fill: #2A2520; font-weight: 600; letter-spacing: -0.02em;">conduit.dsp</text>
+  <text x="130" y="95" style="font-family: 'IBM Plex Sans', sans-serif; font-size: 56px; fill: #2A2520; font-weight: 600; letter-spacing: -0.02em;">conduit.dsp</text>
 </svg>

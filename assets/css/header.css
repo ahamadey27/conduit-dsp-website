@@ -14,8 +14,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: var(--space-3);
-  padding-bottom: var(--space-3);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .site-header__top {
@@ -32,8 +32,8 @@
 }
 
 .site-logo img {
-  height: 120px;
-  width: 450px;
+  height: 151px;
+  width: 567px;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -87,7 +87,8 @@
 
 /* Navigation */
 .site-nav {
-  margin-top: calc(var(--space-2) * -1);
+  margin-top: calc(var(--space-6) * -1);
+  margin-bottom: var(--space-2);
 }
 
 .site-nav__list {
@@ -98,7 +99,7 @@
 
 .nav-item a {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.14em;

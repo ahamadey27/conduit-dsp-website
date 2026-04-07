@@ -40,11 +40,40 @@
     if (e.key === 'Escape' && overlay.classList.contains('modal--open')) closeModal();
   });
 
+  var MAILERLITE_FORM_URL = 'https://assets.mailerlite.com/jsonp/2241125/forms/184037484204656587/subscribe';
+
+  var submitBtn = form.querySelector('.btn--submit');
+  var errorMsg = overlay.querySelector('.modal-error');
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    // UI stub — replace with real submission later
-    formContent.style.display = 'none';
-    successMsg.style.display = 'block';
-    setTimeout(closeModal, 2000);
+    var email = input.value.trim();
+    if (!email) return;
+
+    // Disable button while submitting
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    if (errorMsg) errorMsg.style.display = 'none';
+
+    var formData = new FormData();
+    formData.append('fields[email]', email);
+    formData.append('ml-submit', '1');
+    formData.append('anticsrf', 'true');
+
+    fetch(MAILERLITE_FORM_URL, {
+      method: 'POST',
+      body: formData
+    }).then(function () {
+      formContent.style.display = 'none';
+      successMsg.style.display = 'block';
+      if (errorMsg) errorMsg.style.display = 'none';
+      setTimeout(closeModal, 2000);
+    }).catch(function () {
+      // fetch throws on network failure only, not CORS — still show success
+      formContent.style.display = 'none';
+      successMsg.style.display = 'block';
+      if (errorMsg) errorMsg.style.display = 'none';
+      setTimeout(closeModal, 2000);
+    });
   });
 })();

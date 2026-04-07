@@ -117,3 +117,11 @@
   color: var(--accent);
   font-weight: 500;
 }
+
+.modal-error {
+  display: none;
+  text-align: center;
+  padding: var(--space-3) 0 0;
+  color: var(--danger);
+  font-size: var(--text-sm);
+}

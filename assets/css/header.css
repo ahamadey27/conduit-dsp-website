@@ -36,7 +36,8 @@
   object-fit: contain;
   object-position: left;
   display: block;
-  margin-left: -28px;
+  /* Align logo here */
+  margin-left: -91px;
   margin-top: -38px;
   margin-bottom: -38px;
 }

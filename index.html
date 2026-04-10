@@ -135,6 +135,22 @@
         </div>
       </div>
     </section>
+
+    <!-- ========== Newsletter Signup ========== -->
+    <section class="home-newsletter">
+      <div class="container">
+        <div class="home-newsletter__inner">
+          <p style="font-size: 24px;"><b><strong>STAY IN THE LOOP</strong></b></p>
+          <p>Join our mailing list for product updates and exclusive discount codes.</p>
+          <form id="newsletter-form" class="newsletter-form" novalidate>
+            <input type="email" name="email" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn--submit">Subscribe</button>
+          </form>
+          <div class="newsletter-success" hidden>Thanks for subscribing!</div>
+          <div class="newsletter-error" hidden>Something went wrong. Please try again.</div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ==================== FOOTER: Info Links, Social Icons, Copyright ==================== -->
@@ -194,5 +210,45 @@
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/modal.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>
+
+  <!-- Newsletter form → MailerLite -->
+  <script>
+    (function () {
+      var ML_FORM_ID = '184331636279609031';
+      var ML_ACCOUNT_ID = '2241125';
+
+      var form = document.getElementById('newsletter-form');
+      if (!form) return;
+      var success = document.querySelector('.newsletter-success');
+      var error = document.querySelector('.newsletter-error');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        success.hidden = true;
+        error.hidden = true;
+
+        var email = form.querySelector('input[name="email"]').value.trim();
+        if (!email) return;
+
+        var url = 'https://assets.mailerlite.com/jsonp/' + ML_ACCOUNT_ID +
+                  '/forms/' + ML_FORM_ID + '/subscribe';
+        var body = 'fields[email]=' + encodeURIComponent(email);
+
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Subscribe failed');
+            form.reset();
+            success.hidden = false;
+          })
+          .catch(function () {
+            error.hidden = false;
+          });
+      });
+    })();
+  </script>
 </body>
 </html>

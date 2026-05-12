@@ -47,8 +47,20 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  cursor: pointer;
   margin-left: auto;
+}
+
+.cart-widget__link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 150ms;
+}
+
+.cart-widget__link:hover {
+  text-decoration: none;
+  opacity: 0.7;
 }
 
 #cart-total {

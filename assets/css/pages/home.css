@@ -31,6 +31,22 @@
   object-fit: cover;
 }
 
+.plugin-card__image--screenshot {
+  background: url('/assets/images/plugin-robin-control-lite.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  height: 220px;
+}
+
+.plugin-card__image--screenshot img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .plugin-card__body {
   padding: var(--space-4) var(--space-4) var(--space-6);
 }

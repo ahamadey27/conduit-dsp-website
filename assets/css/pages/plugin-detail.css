@@ -7,10 +7,11 @@
 }
 
 .plugin-detail__hero {
+  display: block;
   width: 100%;
+  height: auto;
   max-height: 500px;
   object-fit: contain;
-  background: var(--bg-secondary);
   margin-bottom: var(--space-8);
   border-radius: 2px;
 }

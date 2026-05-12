@@ -61,10 +61,27 @@ assets/images/                    ← Placeholder images (solid #1a1a1a rectangl
 
 ## JavaScript Notes
 
-- **Cart:** In-memory only (resets on reload). Currency conversion with static rates (USD/EUR/GBP/CAD). Lemon Squeezy integration will replace this later.
+- **Cart:** Persisted in `localStorage` under `conduit_cart_v1`. Items, qty, and currency survive reloads and cross-page navigation. Currency conversion uses static rates (USD/EUR/GBP/CAD).
+- **Checkout (Lemon Squeezy):** `assets/js/cart.js` exposes a `LEMON_SQUEEZY` config block at the top (store name + per-product buy URLs + overlay-vs-redirect toggle). When URLs are populated, the Checkout button on `/cart/` loads `lemon.js` on demand and opens Lemon's overlay; until then it shows a "checkout is being set up" notice. Multi-item carts aren't supported on the static site — the handler picks the first item with a configured URL. True multi-product checkouts require Lemon Squeezy's Cart API (server-side).
+- **Cart page:** `/cart/index.html` renders line items from `cart.items` via `renderCartPage()`. The Cart nav link appears after Updates on every page, and both `$0.00` and the count badge in the header link to `/cart/`.
 - **Account page:** UI stub only — no form submission. Lemon Squeezy customer portal handles auth.
 - **YouTube embeds:** Use `PLACEHOLDER_VIDEO_ID` / `PLACEHOLDER_LITE_VIDEO_ID` — replace when real IDs available.
 - **Social links:** All `href="#"` — replace with real URLs later.
+
+### Email capture modal (pre-launch template)
+
+`assets/js/modal.js` is the reusable "Notify me when it's ready" capture flow. It opens an overlay on Add-to-Cart clicks for a chosen product and POSTs the email to a MailerLite hosted form (no backend needed).
+
+**Status:** Currently disabled. The IIFE in `modal.js` is wrapped in `/* … */`. The `<div id="email-modal">` block and the `<script src="…/modal.js">` tag are commented out in `index.html`, `plugins/index.html`, and `plugins/robin-control-lite/index.html`. The original RCL MailerLite form ID (`184037484204656587`) is preserved as a reference inside `modal.js`.
+
+**Why disabled:** Robin Control Lite is now a real product with a real Add-to-Cart → checkout flow. The pre-launch capture is no longer needed for RCL.
+
+**Reuse for Robin Control:** When Robin Control enters its own waitlist phase, follow the checklist at the top of `modal.js`:
+1. Uncomment the IIFE in `modal.js`.
+2. Change the button selector to `data-product-id="robin-control"`.
+3. Replace `MAILERLITE_FORM_URL` with the new MailerLite form URL for the Robin Control mailing list (different form ID — same account).
+4. Uncomment the `<div id="email-modal">` block and the `<script src="…/modal.js">` tag on every page that shows the Robin Control Add-to-Cart button.
+5. In `cart.js`, add `if (btn.getAttribute('data-product-id') === 'robin-control') return;` to the Add-to-Cart loop so the modal intercepts those clicks instead of cart.js adding the item.
 
 ## Shared HTML Boilerplate
 

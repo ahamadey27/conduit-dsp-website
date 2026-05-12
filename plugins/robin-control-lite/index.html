@@ -68,18 +68,19 @@
             </div>
           </li>
           <li class="nav-item"><a href="/updates/">Updates</a></li>
+          <li class="nav-item"><a href="/cart/">Cart</a></li>
           <!-- <li class="nav-item"><a href="/account/">Account</a></li> -->
         </ul>
       </nav>
         <div class="cart-widget">
-          <span id="cart-total">$0.00</span>
+          <a href="/cart/" class="cart-widget__link"><span id="cart-total">$0.00</span></a>
           <select id="currency-select">
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="GBP">GBP</option>
             <option value="CAD">CAD</option>
           </select>
-          <span id="cart-count" class="cart-count hidden">0</span>
+          <a href="/cart/" class="cart-widget__link"><span id="cart-count" class="cart-count hidden">0</span></a>
         </div>
         <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
       </div>
@@ -92,7 +93,7 @@
 
       <!-- ========== Hero Image ========== -->
       <img
-        src="/assets/images/plugin-robin-control-lite.png"
+        src="/assets/images/RCL.png"
         alt="Robin Control Lite plugin interface"
         class="plugin-detail__hero"
       >
@@ -106,7 +107,7 @@
                 data-product-id="robin-control-lite"
                 data-price="0"
                 data-name="Robin Control Lite">
-          Let me know when it's available!
+          Add to Cart
         </button>
         <p class="legal-notice">By downloading you agree to the <a href="/eula/robin-control-lite/">End User License Agreement</a> and <a href="/privacy-policy/">Privacy Policy</a>.</p>
       </div>
@@ -185,14 +186,19 @@
     </div>
   </footer>
 
-  <!-- ==================== EMAIL MODAL ==================== -->
+  <!-- ==================== EMAIL MODAL (DISABLED) ====================
+       Pre-launch "notify me" capture. Originally used for Robin Control
+       Lite; now retired because RCL is a real product. Keep this block
+       commented out so it can be re-enabled for Robin Control's
+       pre-launch with the matching MailerLite form URL in modal.js.
+       See CLAUDE.md → "Email capture modal (pre-launch template)".
   <div id="email-modal" class="modal-overlay">
     <div class="modal-card">
       <button class="modal-close" aria-label="Close">&times;</button>
-      <h3>Get Robin Control Lite</h3>
-      <p>Enter your email and we'll let you know when it's ready to download.</p>
+      <h3>Get Robin Control</h3>
+      <p>Enter your email and we'll let you know when it's ready.</p>
       <form class="modal-form">
-        <p class="legal-notice">By downloading you agree to the <a href="/eula/robin-control-lite/">End User License Agreement</a> and <a href="/privacy-policy/">Privacy Policy</a>.</p>
+        <p class="legal-notice">By downloading you agree to the <a href="/eula/robin-control/">End User License Agreement</a> and <a href="/privacy-policy/">Privacy Policy</a>.</p>
         <input type="email" placeholder="you@example.com" required>
         <button type="submit" class="btn--submit">Send</button>
       </form>
@@ -200,6 +206,8 @@
       <div class="modal-error">Something went wrong. Please try again.</div>
     </div>
   </div>
+  -->
+
 
   <!-- ==================== COOKIE CONSENT ==================== -->
   <div id="cookie-banner" class="cookie-banner hidden">
@@ -210,7 +218,7 @@
   <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/nav.js"></script>
-  <script src="/assets/js/modal.js"></script>
+  <!-- <script src="/assets/js/modal.js"></script> --> <!-- Pre-launch email modal — re-enable when Robin Control needs it. -->
   <script src="/assets/js/cookie-banner.js"></script>
 </body>
 </html>

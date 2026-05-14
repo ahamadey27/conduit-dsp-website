@@ -23,6 +23,7 @@
 
 .plugin-card__image {
   display: block;
+  border-bottom: 1px solid var(--border);
 }
 
 .plugin-card__image img {
@@ -32,7 +33,7 @@
 }
 
 .plugin-card__image--screenshot {
-  background: url('/assets/images/plugin-robin-control-lite.png') center/cover no-repeat;
+  background: var(--bg-secondary);
   display: flex;
   align-items: center;
   justify-content: center;

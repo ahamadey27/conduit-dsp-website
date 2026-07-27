@@ -351,8 +351,8 @@ operation and we intend to stay that way — focused, intentional, and always li
 <div class="plugins-header">
   <h1>Plugins</h1>
   <p class="plugins-subtext">
-    Our plugins are available in VST3, AU, and AAX formats at 64-bit.<br>
-    VST3 and AAX for Windows and macOS, AU for macOS only.
+    Robin Control Lite is available in 64-bit VST3 for macOS and Windows, plus AU for macOS.<br>
+    AAX support is coming soon.
   </p>
 </div>
 ```

@@ -17,14 +17,6 @@
   <meta name="twitter:title" content="Conduit DSP — Audio Plugins">
   <meta name="twitter:description" content="Precision audio plugins for modern producers and sound designers.">
   <meta name="twitter:image" content="https://conduitdsp.com/assets/images/og-image.png">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFCXCLVEHM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JFCXCLVEHM');
-  </script>
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,7 +124,7 @@
         <div class="home-about__text">
           <p style="font-size: 24px;"><b><strong>ABOUT</strong></b></p>
           <p>conduit.dsp is an audio plugin company committed to creating unique devices designed to shorten the conduit between ideas and creation...hence the name!</p>
-          <p>We're just getting started so expect some plugins that will have you thinking, "Wow. So no one's thought of that yet?" As we build our brand and fill our catalog with products ranging from intuitive samplers to algorithmic driven sequencers, please share your email with us and we'll do our best to keep the noise level down and discount codes up.</p>
+          <p>We're just getting started, so expect plugins that make you think, "Wow. So no one's thought of that yet?" We're a small operation, and if you subscribe or download one of our plugins, we may occasionally email you about product updates, future releases, and discounts. We promise not to bombard you, and you can unsubscribe whenever you like.</p>
         </div>
       </div>
     </section>
@@ -182,7 +174,7 @@
           </div>
         </div>
       </div>
-      <p class="site-footer__copyright">&copy; 2025 Conduit DSP LLC. All rights reserved.</p>
+      <p class="site-footer__copyright">&copy; 2026 Conduit DSP LLC. All rights reserved.</p>
     </div>
   </footer>
 
@@ -209,9 +201,12 @@
 
 
   <!-- ==================== COOKIE CONSENT ==================== -->
-  <div id="cookie-banner" class="cookie-banner hidden">
-    <p class="cookie-banner__text">We use cookies to improve your experience. By continuing to use this site you agree to our <a href="/privacy-policy/">Privacy Policy</a>.</p>
-    <button id="cookie-accept" class="cookie-banner__btn">Got it</button>
+  <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-live="polite" aria-label="Analytics preferences">
+    <p class="cookie-banner__text">We use optional analytics to understand what is useful. The site works either way. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--secondary" type="button">No thanks</button>
+      <button id="cookie-accept" class="cookie-banner__btn" type="button">Allow analytics</button>
+    </div>
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->

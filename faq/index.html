@@ -17,14 +17,6 @@
   <meta name="twitter:title" content="FAQ — Conduit DSP">
   <meta name="twitter:description" content="Precision audio plugins for modern producers and sound designers.">
   <meta name="twitter:image" content="https://conduitdsp.com/assets/images/og-image.png">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFCXCLVEHM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JFCXCLVEHM');
-  </script>
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,17 +75,17 @@
 
       <div class="faq-item">
         <h3>What platforms are supported?</h3>
-        <p>Our plugins support Windows (VST3, AAX) and macOS (VST3, AU, AAX).</p>
+        <p>Robin Control Lite supports 64-bit VST3 on macOS and Windows, plus AU on macOS. AAX support is coming soon.</p>
       </div>
 
       <div class="faq-item">
         <h3>What DAWs are compatible?</h3>
-        <p>Any DAW that supports VST3, AU, or AAX formats — including Ableton Live, Logic Pro, Pro Tools, FL Studio, Reaper, Studio One, and more.</p>
+        <p>Robin Control Lite works in DAWs that support VST3 on macOS or Windows, or AU on macOS, including Ableton Live, Logic Pro, FL Studio, Reaper, Studio One, and more. AAX support for Pro Tools is coming soon.</p>
       </div>
 
       <div class="faq-item">
         <h3>How do I install a plugin?</h3>
-        <p>After purchasing, download the installer from your account. Run the installer and follow the on-screen instructions. Restart your DAW and the plugin will appear in your plugin list.</p>
+        <p>After checkout, Lemon Squeezy emails your download link. Download and run the installer, follow the on-screen instructions, then restart or rescan your DAW if the plugin does not appear immediately.</p>
       </div>
 
       <div class="faq-item">
@@ -103,12 +95,12 @@
 
       <div class="faq-item">
         <h3>Do you offer refunds?</h3>
-        <p>Yes — if you're not satisfied, contact us within 14 days of purchase at <a href="mailto:hello@conduitdsp.com">hello@conduitdsp.com</a> for a full refund.</p>
+        <p>Robin Control Lite is free. Refund terms for future paid products will be shown on the product page and at checkout. If something goes wrong, contact <a href="mailto:hello@conduitdsp.com">hello@conduitdsp.com</a> and we will help.</p>
       </div>
 
       <div class="faq-item">
         <h3>How do I get updates?</h3>
-        <p>We will send you via email updates for any plugin in you've purchased from us. Check the <a href="/updates/">Updates</a> page to see the latest release notes.</p>
+        <p>We email important updates for plugins you have downloaded or purchased. You can also check the <a href="/updates/">Updates</a> page for the latest release notes.</p>
       </div>
 
       <div class="faq-item">
@@ -146,14 +138,17 @@
           </div>
         </div>
       </div>
-      <p class="site-footer__copyright">&copy; 2025 Conduit DSP LLC. All rights reserved.</p>
+      <p class="site-footer__copyright">&copy; 2026 Conduit DSP LLC. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- ==================== COOKIE CONSENT ==================== -->
-  <div id="cookie-banner" class="cookie-banner hidden">
-    <p class="cookie-banner__text">We use cookies to improve your experience. By continuing to use this site you agree to our <a href="/privacy-policy/">Privacy Policy</a>.</p>
-    <button id="cookie-accept" class="cookie-banner__btn">Got it</button>
+  <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-live="polite" aria-label="Analytics preferences">
+    <p class="cookie-banner__text">We use optional analytics to understand what is useful. The site works either way. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--secondary" type="button">No thanks</button>
+      <button id="cookie-accept" class="cookie-banner__btn" type="button">Allow analytics</button>
+    </div>
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->

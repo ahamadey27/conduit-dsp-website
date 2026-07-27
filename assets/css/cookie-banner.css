@@ -28,10 +28,16 @@
   text-decoration: underline;
 }
 
+.cookie-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
 .cookie-banner__btn {
   background: var(--white);
   color: var(--text-primary);
-  border: none;
+  border: 1px solid var(--white);
   padding: var(--space-2) var(--space-6);
   font-family: var(--font-body);
   font-size: var(--text-sm);
@@ -45,10 +51,24 @@
   background: var(--bg-secondary);
 }
 
+.cookie-banner__btn--secondary {
+  background: transparent;
+  color: var(--white);
+}
+
+.cookie-banner__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 @media (max-width: 480px) {
   .cookie-banner {
     flex-direction: column;
     gap: var(--space-3);
     text-align: center;
+  }
+
+  .cookie-banner__actions {
+    justify-content: center;
+    width: 100%;
   }
 }

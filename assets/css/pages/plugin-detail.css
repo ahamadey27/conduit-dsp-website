@@ -12,8 +12,33 @@
   height: auto;
   max-height: 500px;
   object-fit: contain;
-  margin-bottom: var(--space-8);
   border-radius: 2px;
+}
+
+.plugin-detail__hero-wrap {
+  position: relative;
+  margin-bottom: var(--space-8);
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.plugin-detail__hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-6);
+  background: rgba(42, 37, 32, 0.42);
+  color: var(--bg-primary);
+  text-align: center;
+}
+
+.plugin-detail__hero-overlay span {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 8vw, 5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 18px rgba(42, 37, 32, 0.65);
 }
 
 .plugin-detail__header {

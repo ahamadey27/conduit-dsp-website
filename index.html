@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="/assets/css/cart.css">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
   <link rel="stylesheet" href="/assets/css/pages/home.css">
-  <link rel="stylesheet" href="/assets/css/modal.css">
+  <link rel="stylesheet" href="/assets/css/waitlist.css">
   <!-- MailerLite Universal -->
   <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -110,7 +110,19 @@
             <div class="plugin-card__body">
               <h2 class="plugin-card__name"><a href="/plugins/robin-control/">Robin Control</a></h2>
               <span class="plugin-card__price">Coming Soon...</span>
-              <!-- <button class="btn btn--add-cart" data-product-id="robin-control" data-price="49.00" data-name="Robin Control">Add to Cart</button> -->
+              <div class="waitlist-signup">
+                <p class="waitlist-signup__lead">Let me know when Robin Control is available</p>
+                <p class="waitlist-signup__benefit">Join the waitlist and get 50% off at launch.</p>
+                <form class="waitlist-form" data-waitlist-form>
+                  <div class="waitlist-form__controls">
+                    <label class="waitlist-form__label" for="robin-control-waitlist-email">Email address</label>
+                    <input id="robin-control-waitlist-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                    <button type="submit" class="btn btn--waitlist">Notify me</button>
+                  </div>
+                  <p class="waitlist-form__consent">By subscribing, you agree to receive Robin Control launch and promotional emails. Unsubscribe anytime. <a href="/privacy-policy/">Privacy Policy</a>.</p>
+                  <p class="waitlist-form__status" data-waitlist-status aria-live="polite" hidden></p>
+                </form>
+              </div>
             </div>
           </article>
 
@@ -181,28 +193,6 @@
     </div>
   </footer>
 
-  <!-- ==================== EMAIL MODAL (DISABLED) ====================
-       Pre-launch "notify me" capture. Originally used for Robin Control
-       Lite; now retired because RCL is a real product. Keep this block
-       commented out so it can be re-enabled for Robin Control's
-       pre-launch with the matching MailerLite form URL in modal.js.
-       See CLAUDE.md → "Email capture modal (pre-launch template)".
-  <div id="email-modal" class="modal-overlay">
-    <div class="modal-card">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <h3>Get Robin Control</h3>
-      <p>Enter your email and we'll let you know when it's ready.</p>
-      <form class="modal-form">
-        <input type="email" placeholder="you@example.com" required>
-        <button type="submit" class="btn--submit">Send</button>
-      </form>
-      <div class="modal-success">Thanks! We'll be in touch.</div>
-      <div class="modal-error">Something went wrong. Please try again.</div>
-    </div>
-  </div>
-  -->
-
-
   <!-- ==================== COOKIE CONSENT ==================== -->
   <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-live="polite" aria-label="Analytics preferences">
     <p class="cookie-banner__text">We use optional analytics to understand what is useful. The site works either way. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
@@ -215,7 +205,7 @@
   <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/nav.js"></script>
-  <!-- <script src="/assets/js/modal.js"></script> --> <!-- Pre-launch email modal — re-enable when Robin Control needs it. -->
+  <script src="/assets/js/waitlist.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>
 
   <!-- Newsletter form → MailerLite -->

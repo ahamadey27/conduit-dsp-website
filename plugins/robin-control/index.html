@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="/assets/css/cart.css">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
   <link rel="stylesheet" href="/assets/css/pages/plugin-detail.css">
+  <link rel="stylesheet" href="/assets/css/waitlist.css">
 </head>
 <body>
 
@@ -83,6 +84,21 @@
         <div class="plugin-detail__hero-overlay" aria-label="Coming Soon">
           <span>Coming Soon...</span>
         </div>
+      </div>
+
+      <!-- ========== Pre-Launch Waitlist ========== -->
+      <div class="waitlist-signup waitlist-signup--detail">
+        <p class="waitlist-signup__lead">Let me know when Robin Control is available</p>
+        <p class="waitlist-signup__benefit">Join the waitlist and get 50% off at launch.</p>
+        <form class="waitlist-form" data-waitlist-form>
+          <div class="waitlist-form__controls">
+            <label class="waitlist-form__label" for="robin-control-waitlist-email">Email address</label>
+            <input id="robin-control-waitlist-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            <button type="submit" class="btn btn--waitlist">Notify me</button>
+          </div>
+          <p class="waitlist-form__consent">By subscribing, you agree to receive Robin Control launch and promotional emails. Unsubscribe anytime. <a href="/privacy-policy/">Privacy Policy</a>.</p>
+          <p class="waitlist-form__status" data-waitlist-status aria-live="polite" hidden></p>
+        </form>
       </div>
 
       <!-- ========== Plugin Name and Tagline ========== -->
@@ -172,6 +188,7 @@
   <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/waitlist.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>
 </body>
 </html>

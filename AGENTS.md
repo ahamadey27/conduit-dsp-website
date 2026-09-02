@@ -67,7 +67,7 @@ eula/robin-control-lite/index.html
 assets/css/
 assets/js/cart.js
 assets/js/nav.js
-assets/js/modal.js                 # disabled Robin Control waitlist template
+assets/js/waitlist.js              # active Robin Control inline waitlist forms
 assets/js/cookie-banner.js
 assets/images/
 ```
@@ -77,7 +77,7 @@ assets/images/
 - Checkout opens the first configured Lemon Squeezy product; there is no true multi-item checkout.
 - Robin Control Lite has a live configured Lemon Squeezy URL.
 - The account page does not authenticate and must not be described as a working account system.
-- The Robin Control pre-launch modal is disabled. Re-enable it only with the correct RC MailerLite form and cart-handler skip described at the top of `assets/js/modal.js`.
+- Robin Control waitlist forms are active on the homepage, Plugins page, and Robin Control detail page. They submit to MailerLite form `197334966677275966`, which adds confirmed subscribers to the `Robin Control Waitlist` group.
 
 ## Privacy and marketing constraints
 

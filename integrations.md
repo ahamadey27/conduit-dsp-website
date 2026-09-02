@@ -25,7 +25,7 @@ LS sends *transactional* email automatically: order confirmations, download link
 MailerLite is for the other half — *marketing* email. It does three things LS cannot:
 
 1. **Audience capture before purchase/download.** People who land on the site but don't want to download yet can still join your newsletter. LS only knows about people *after* they go through checkout.
-2. **Pre-launch waitlists.** When Robin Control is "Coming Soon", you need a way to collect "notify me when it ships" emails. There's no LS event to fire yet. (The `modal.js` template in this repo is already set up for this — see `CLAUDE.md` → "Email capture modal".)
+2. **Pre-launch waitlists.** Robin Control's inline forms collect "notify me when it ships" emails directly in MailerLite because there is no Lemon Squeezy order event before launch.
 3. **Campaigns to your full audience** — discount codes (relevant once you have paid products), new product announcements, monthly updates. You can target newsletter subscribers, past downloaders, or both.
 
 **Short version:** LS handles the download flow. MailerLite handles the conversation around it. For a free-plugin launch, MailerLite is arguably *more* important than LS — the email address is the asset.
@@ -158,14 +158,15 @@ Most of this is already done. Here's the state of each form and what (if anythin
 - [x] `index.html` posts to MailerLite (`fetch` → `assets.mailerlite.com/jsonp/2241125/forms/184331636279609031/subscribe`)
 - [ ] *Only if you regenerate the form:* edit `ML_FORM_ID` and `ML_ACCOUNT_ID` in the `<script>` block near the bottom of `index.html`
 
-### 6.2 Pre-launch waitlist for Robin Control — template ready, currently disabled
+### 6.2 Pre-launch waitlist for Robin Control — active inline forms
 
-The email-capture modal lives in `assets/js/modal.js`, currently commented out. It was originally wired to RCL during its own pre-launch, and is preserved as a template. The full 5-step checklist is at the top of `modal.js` and mirrored in `CLAUDE.md` → "Email capture modal". When you're ready:
-
-- [x] Create a MailerLite form for **Robin Control Waitlist**, copy its action URL
-- [x] In `modal.js`: uncomment the IIFE, change the selector from `data-product-id="robin-control-lite"` to `data-product-id="robin-control"`, swap `MAILERLITE_FORM_URL`
-- [ ] In `index.html`, `plugins/index.html`, `plugins/robin-control/index.html`: uncomment the `<div id="email-modal">` block and the `<script src="/assets/js/modal.js">` tag
-- [ ] In `cart.js`: add `if (btn.getAttribute('data-product-id') === 'robin-control') return;` inside the Add-to-Cart loop so the modal intercepts the click instead of cart.js adding to cart
+- [x] MailerLite embedded form `197334966677275966` adds confirmed subscribers to **Robin Control Waitlist**
+- [x] Double opt-in is enabled in MailerLite
+- [x] Inline forms are present on the homepage, Plugins page, and Robin Control detail page
+- [x] `assets/js/waitlist.js` submits all three forms to the same MailerLite endpoint
+- [x] Rewrite both emails in the **Robin Control — Pre-Launch Sequence** automation
+- [ ] Review the email drafts, add final subject/preheader copy, and activate the automation before deploying the website forms
+- [ ] At launch, create the product-limited `ROBIN50` discount in Lemon Squeezy and email it to the confirmed waitlist
 
 ---
 
@@ -214,11 +215,12 @@ Start with **A**. Free plugin = audience is the goal, and the newsletter form on
 5. LS sends the download link by email.
 6. *(Option C/D, if enabled)* Zapier picks up `order_created` → adds them to MailerLite **Downloaders** tagged `robin-control-lite`.
 
-### Flow 3 — Pre-launch waitlist for Robin Control (when you flip on the modal)
-1. RC page has "Notify me when it's ready" button (re-enabled modal).
-2. User clicks → modal opens with email field.
-3. They submit → POST to MailerLite **RC Waitlist** form URL.
-4. They're on the list. When RC ships, you broadcast to that list with launch details.
+### Flow 3 — Pre-launch waitlist for Robin Control
+1. Visitor enters an email in an inline Robin Control waitlist form.
+2. The form posts to MailerLite form `197334966677275966`.
+3. MailerLite sends the double-opt-in confirmation email.
+4. After confirmation, MailerLite adds the subscriber to **Robin Control Waitlist** and starts the pre-launch sequence.
+5. At launch, send the shared `ROBIN50` code and the live checkout link to that group.
 
 ### Flow 4 — Paid purchase of Robin Control (future)
 See Section 11.
@@ -237,7 +239,7 @@ Run in LS **test mode** first.
 - [ ] Currency selector changes both the cart and the header total
 - [ ] Removing an item from the cart works
 - [ ] Newsletter sign-up on home page lands a subscriber in MailerLite **Newsletter**
-- [ ] (If you flipped on the RC waitlist modal) modal submission lands a subscriber in **RC Waitlist**
+- [ ] Robin Control inline waitlist submission sends the confirmation email and lands a confirmed subscriber in **Robin Control Waitlist**
 - [ ] Mobile: cart page is readable, Checkout button works at 480px and below
 - [ ] EULA + Privacy Policy links work from inside the LS checkout (configurable per product in LS)
 
@@ -284,6 +286,6 @@ The cart can hold multiple items, but the Checkout button only opens the first p
 ## 12. Open questions I'd still like your call on
 
 - [ ] **Free-download flow for RCL** — route the $0 download through Lemon Squeezy (captures email, consistent flow, easy to upgrade to paid later) or host the installer file directly on conduitdsp.com (zero friction, no email captured, no metrics)? *Doc assumes the LS route. For a free plugin, the email capture is most of the point.*
-- [ ] **Pre-launch waitlist for Robin Control** — flip on the `modal.js` template now (start collecting RC interest immediately, even before RC is anywhere close to ready) or wait until RC has a real ETA?
+- [x] **Pre-launch waitlist for Robin Control** — inline forms collect confirmed subscribers on the homepage, Plugins page, and Robin Control detail page.
 - [ ] **LS → ML sync** — start with Option A (separate lists) and revisit at first launch, or set up Option C/D now so the data is flowing from day one?
 - [ ] **Newsletter incentive** — offer something for joining (a free preset pack, discount code for the eventual RC, early-access status)? Increases signup rate meaningfully and is worth deciding before launch announcement.

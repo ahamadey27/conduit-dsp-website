@@ -42,7 +42,9 @@ Do not treat unchecked roadmap items as completed work or proposed prices/featur
 - Current growth posture: small Instagram awareness spend, with marketing and operations kept DIY until revenue can support outside help or additional tooling.
 - No fixed twelve-month revenue outcome has been chosen yet; do not invent an income-replacement target or aggressive growth mandate.
 - Core positioning: an audio-plugin company committed to shortening the conduit between ideas and creation.
-- Useful voice anchors: confident, concise, lightly cheeky; “intuitive on the surface. weird where it counts.”
+- Brand tagline (confirmed by Alex, September 18, 2026): **“A shorter path from idea to sound”**.
+- Product messaging (confirmed by Alex, September 18, 2026): explicitly highlight **controlled parameter randomization** for both Robin Control Lite and Robin Control. Treat it as a core benefit alongside sample playback variation in product summaries and marketing copy.
+- Voice: confident, concise, lightly cheeky. The previous surface/weirdness tagline is retired; do not reuse it.
 - The strongest existing product story is workflow-oriented: fast, controlled variation for one-shot samples without configuring a general-purpose sampler.
 
 ## Brand and visual system

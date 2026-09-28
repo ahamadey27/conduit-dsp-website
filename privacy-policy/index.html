@@ -20,16 +20,17 @@
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/css/cart.css">
+  <link rel="stylesheet" href="/assets/css/storefront.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
@@ -38,7 +39,7 @@
         <a href="/" class="site-logo">
           <img src="/assets/images/logo.svg" alt="Conduit DSP">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul class="site-nav__list">
           <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown">
@@ -49,45 +50,38 @@
             </div>
           </li>
           <li class="nav-item"><a href="/updates/">Updates</a></li>
-          <li class="nav-item"><a href="/cart/">Cart</a></li>
-          <!-- <li class="nav-item"><a href="/account/">Account</a></li> -->
+          <li class="nav-item"><a href="/account/" data-store-action="view_account">Account</a></li>
         </ul>
       </nav>
         <div class="cart-widget">
-          <a href="/cart/" class="cart-widget__link"><span id="cart-total">$0.00</span></a>
-          <select id="currency-select">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <a href="/cart/" class="cart-widget__link"><span id="cart-count" class="cart-count hidden">0</span></a>
+          <a href="/cart/" class="cart-widget__link" data-store-action="view_cart">Cart <span class="cart-count" hidden data-moonbase-if="cart.has_items" data-moonbase-render="cart.item_count">0</span></a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- ==================== MAIN CONTENT (Stub) ==================== -->
-  <main class="main-content">
+  <main class="main-content" id="main-content">
     <div class="container page-stub">
       <h1>Privacy Policy</h1>
-      <p class="privacy-updated">Last updated: July 25, 2026 &middot; This policy applies to conduitdsp.com and all Conduit DSP products.</p>
+      <p class="privacy-updated">Last updated: September 22, 2026 &middot; This policy applies to conduitdsp.com and all Conduit DSP products.</p>
 
       <p>Conduit DSP LLC ("Conduit DSP," "we," "our," or "us") is a small, independent audio software company based in New York. This Privacy Policy explains what information we collect, why we collect it, and how we use it. We keep things simple because we are a small operation and we only collect what we actually need.</p>
       <p>If you have questions about anything here, email us at <a href="mailto:hello@conduitdsp.com">hello@conduitdsp.com</a>.</p>
 
       <h2>1. Information We Collect</h2>
-      <p><strong>Email address.</strong> When you download a free plugin, join a waitlist, subscribe to our newsletter, or purchase a product, we receive the email address you provide. We use it to deliver downloads and service messages. Because we are a small operation, we may also send subscribers occasional news about future Conduit DSP products, updates, and discounts. We will not bombard you, and every marketing email includes an unsubscribe link.</p>
-      <p><strong>Purchase information.</strong> If you buy a paid plugin, your payment is processed by Lemon Squeezy (our payment provider). We receive confirmation that a sale occurred and the email address associated with the order. We do not store or see your credit card number, billing address, or any other payment details — Lemon Squeezy handles all of that.</p>
+      <p><strong>Email address.</strong> When you download a free plugin, join a waitlist, subscribe to our newsletter, or purchase a product, we receive the email address you provide. We use it to deliver downloads and service messages. If you opt in to marketing, we also send occasional news about future Conduit DSP products, updates, and discounts. A free license does not require newsletter enrollment. We will not bombard you, and every marketing email includes an unsubscribe link.</p>
+      <p><strong>Accounts and orders.</strong> Moonbase provides our customer accounts, checkout, licenses, and downloads. We receive account and order details such as your name, email, products, license status, and relevant billing information. Payment details are handled by Moonbase and its payment providers; we do not receive your full card number. Earlier orders and receipts may remain with Lemon Squeezy.</p>
+      <p><strong>Plugin activation.</strong> Robin Control Lite 2.0.0 uses Moonbase for activation, validation, and deactivation. This processes license/account details, a device identifier and label, IP address, and software-version information. The plugin stores a signed license locally, including the license holder’s name and email. Optional plugin analytics are disabled, and the plugin does not upload your samples, presets, or DAW projects. Permanent offline activation exchanges request and license files using another connected device. Earlier DRM-free versions retain their original offline behavior.</p>
       <p><strong>Optional website analytics.</strong> If you choose “Allow analytics” in our site banner, Google Analytics may collect information such as pages visited, approximate location, referral source, browser/device type, and time on site. We use it to understand how people find us and which content is useful. Analytics does not load if you choose “No thanks.”</p>
       <p><strong>Support communications.</strong> If you email us for support, we keep that email thread so we can follow up and improve our products. We do not share those conversations with anyone.</p>
 
       <h2>2. How We Use Your Information</h2>
       <ul>
         <li>To send you your plugin download link after you sign up</li>
-        <li>To send product updates, future-product news, and occasional discounts (you can unsubscribe at any time)</li>
-        <li>To process and fulfill paid orders via Lemon Squeezy</li>
+        <li>To send the marketing and product-update emails you subscribe to (you can unsubscribe at any time)</li>
+        <li>To manage accounts, fulfill orders, provide downloads, and activate and validate licenses through Moonbase</li>
         <li>To respond to support requests</li>
         <li>To understand how our website is being used so we can improve it</li>
       </ul>
@@ -97,7 +91,8 @@
       <p>We use a small number of third-party tools to run our business. Each has its own privacy policy that governs how they handle data:</p>
       <ul>
         <li><strong>MailerLite</strong> — Email marketing and list management. Your email address is stored in MailerLite when you subscribe. <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank" rel="noopener">MailerLite Privacy Policy</a></li>
-        <li><strong>Lemon Squeezy</strong> — Checkout, payment processing, and digital-product delivery. <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">Lemon Squeezy Privacy Policy</a></li>
+        <li><strong>Moonbase</strong> — Customer accounts, checkout, license delivery, downloads, activation, and communication preferences. Our Moonbase integration synchronizes customer details, subscription status, and product-related groups to MailerLite. <a href="https://moonbase.sh/privacy-policy/" target="_blank" rel="noopener">Moonbase Privacy Policy</a></li>
+        <li><strong>Lemon Squeezy</strong> — Earlier checkout, payment, and download records and receipt access. <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">Lemon Squeezy Privacy Policy</a></li>
         <li><strong>Google Analytics</strong> — Optional website analytics, loaded only after you allow it. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
         <li><strong>GitHub Pages</strong> — Website hosting. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a></li>
         <li><strong>Namecheap</strong> — Domain registration and DNS.</li>
@@ -106,7 +101,7 @@
       <p>We are selective about the tools we use. We do not currently use Meta Pixel, Google Ads tracking, or behavioral advertising scripts on this website.</p>
 
       <h2>4. Cookies and Local Storage</h2>
-      <p>The site uses browser local storage to remember your cart, currency, and analytics choice. If you allow analytics, Google Analytics may set analytics cookies. We do not use third-party advertising cookies, and shopping, downloads, and the rest of the site continue to work if you reject analytics.</p>
+      <p>The site stores your analytics choice locally. Moonbase uses browser storage and cookies for storefront functions such as cart state and account sessions, and receives network information when the embedded storefront loads. These functions are separate from optional website analytics. Old cart data may remain in your browser from the previous store; it is not transferred into Moonbase. If you allow analytics, Google Analytics may set analytics cookies. We do not use third-party advertising cookies, and shopping, downloads, and the rest of the site continue to work if you reject analytics.</p>
       <p><button id="privacy-reset-analytics" class="btn btn--outline" type="button">Review analytics choice</button></p>
 
       <h2>5. Data Retention</h2>
@@ -133,6 +128,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
+        <div class="footer-brand"><a href="/">conduit.dsp<span aria-hidden="true">↗</span></a><p>A shorter path from idea to sound.</p></div>
         <div class="footer-col">
           <h4 class="footer-col__heading">Info</h4>
           <div class="footer-links">
@@ -171,7 +167,7 @@
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/storefront.js?v=20260922-3"></script>
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>
 </body>

@@ -135,3 +135,34 @@
   content: "— ";
   color: var(--accent);
 }
+
+/* Product-led detail pages. */
+.plugin-detail { max-width: 1056px; padding-top: 40px; }
+.back-link { display: inline-block; font-size: 12px; color: var(--text-muted); margin-bottom: 30px; }
+.plugin-detail__header { margin-bottom: 32px; }
+.plugin-detail__header .eyebrow { margin-bottom: 14px; }
+.plugin-detail__name { font-family: var(--font-body); font-size: clamp(38px, 5vw, 62px); letter-spacing: -.05em; line-height: 1.15; font-weight: 500; }
+.plugin-detail__tagline { font-size: 18px; margin-top: 14px; }
+.plugin-detail > .plugin-detail__hero, .plugin-detail__hero-wrap { background: #DFE7DF; border: 1px solid #CDD6CD; padding: 46px; margin-bottom: 32px; max-height: none; }
+.plugin-detail__hero-wrap { background: #E9DFD4; border-color: #D9CFC2; }
+.plugin-detail__hero-wrap img { filter: drop-shadow(0 16px 16px #28362930); max-height: none; }
+.plugin-detail__purchase { display: grid; grid-template-columns: 1fr auto; gap: 12px 24px; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 28px; }
+.plugin-detail__purchase .plugin-detail__price { font-family: var(--font-body); font-size: 26px; margin: 0; }
+.plugin-detail__compatibility { font-size: 14px; line-height: 1.7; color: var(--text-muted); }
+.plugin-detail__purchase .btn { width: auto; min-width: 220px; }
+.plugin-detail__purchase .legal-notice { grid-column: 1 / -1; margin: 0; }
+.plugin-detail__description { max-width: 760px; margin: 40px auto; }
+.plugin-detail__features { border-top: 1px solid var(--border); padding-top: 32px; }
+.plugin-detail__features h2 { font-size: 32px; letter-spacing: -.04em; margin-bottom: 24px; }
+.plugin-detail__features ul { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; padding: 0; }
+.plugin-detail__features li { padding: 20px 0; text-indent: 0; border-top: 1px solid var(--border); margin: 0; }
+.plugin-detail__features li::before { content: none; }
+.plugin-detail__features li b { display: block; color: var(--text-primary); font-weight: 500; margin-bottom: 8px; font-size: 16px; }
+@media (max-width: 680px) {
+  .plugin-detail { padding-inline: 20px; padding-top: 28px; }
+  .plugin-detail > .plugin-detail__hero, .plugin-detail__hero-wrap { padding: 22px 12px; }
+  .plugin-detail__features ul { grid-template-columns: 1fr; }
+  .plugin-detail__purchase { grid-template-columns: 1fr; align-items: start; }
+  .plugin-detail__purchase .btn { width: 100%; max-width: 220px; min-width: 0; }
+  .plugin-detail__tagline { font-size: 16px; }
+}

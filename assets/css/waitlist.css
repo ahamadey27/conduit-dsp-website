@@ -119,3 +119,13 @@
     flex: 1 1 auto;
   }
 }
+
+/* A compact, readable signup that belongs to the product. */
+.waitlist-signup__lead { font-family: var(--font-body); font-size: 16px; font-weight: 500; letter-spacing: -.02em; }
+.waitlist-signup__benefit { font-size: 13px; }
+.waitlist-form input[type="email"] { min-height: 46px; }
+.waitlist-form input[type="email"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.waitlist-form__controls { flex-direction: row; }
+.waitlist-form__consent { font-size: 11px; line-height: 1.6; color: var(--text-muted); }
+.waitlist-signup--detail { padding: 28px; border-color: var(--border); background: var(--bg-secondary); }
+@media (max-width: 400px) { .waitlist-form__controls { flex-direction: column; } }

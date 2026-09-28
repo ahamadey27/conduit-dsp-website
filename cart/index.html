@@ -20,18 +20,18 @@
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/css/cart.css">
+  <link rel="stylesheet" href="/assets/css/storefront.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
-  <link rel="stylesheet" href="/assets/css/pages/cart.css">
-  <!-- Lemon Squeezy overlay (loaded on demand by cart.js once a checkout URL is configured) -->
+
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
@@ -40,7 +40,7 @@
         <a href="/" class="site-logo">
           <img src="/assets/images/logo.svg" alt="Conduit DSP">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul class="site-nav__list">
           <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown">
@@ -51,53 +51,26 @@
             </div>
           </li>
           <li class="nav-item"><a href="/updates/">Updates</a></li>
-          <li class="nav-item active"><a href="/cart/">Cart</a></li>
-          <!-- <li class="nav-item"><a href="/account/">Account</a></li> -->
+          <li class="nav-item"><a href="/account/" data-store-action="view_account">Account</a></li>
         </ul>
       </nav>
         <div class="cart-widget">
-          <a href="/cart/" id="cart-total-link" class="cart-widget__link"><span id="cart-total">$0.00</span></a>
-          <select id="currency-select">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <a href="/cart/" class="cart-widget__link"><span id="cart-count" class="cart-count hidden">0</span></a>
+          <a href="/cart/" class="cart-widget__link" data-store-action="view_cart">Cart <span class="cart-count" hidden data-moonbase-if="cart.has_items" data-moonbase-render="cart.item_count">0</span></a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- ==================== MAIN CONTENT ==================== -->
-  <main class="main-content">
-    <div class="cart-page container">
-
-      <div class="cart-page__header">
-        <h1>Cart</h1>
-      </div>
-
-      <!-- Empty state -->
-      <div id="cart-empty" class="cart-empty">
-        <p>Your cart is empty.</p>
-        <a href="/plugins/" class="btn btn--add-cart btn--lg cart-empty__cta">Browse Plugins</a>
-      </div>
-
-      <!-- Items list + summary (revealed by cart.js when items exist) -->
-      <div id="cart-filled" class="cart-filled hidden">
-        <ul id="cart-items" class="cart-items"></ul>
-
-        <div class="cart-summary">
-          <div class="cart-summary__row">
-            <span class="cart-summary__label">Subtotal</span>
-            <span id="cart-subtotal" class="cart-summary__value">$0.00</span>
-          </div>
-          <p class="cart-note">Taxes and any applicable fees are calculated at checkout. Secure checkout powered by Lemon Squeezy.</p>
-          <button id="cart-checkout-btn" class="btn btn--add-cart btn--lg">Checkout</button>
-          <p id="cart-checkout-notice" class="cart-checkout-notice hidden"></p>
-        </div>
-      </div>
+  <main class="main-content" id="main-content">
+    <div class="container storefront-page">
+      <p class="eyebrow">Your next sound</p>
+      <h1>Your cart</h1>
+      <p>Review your plugins and complete checkout with Moonbase.</p>
+      <div class="storefront-actions"><a class="btn btn--primary" href="https://conduitdsp.moonbase.sh" data-store-action="view_cart">Open cart</a><a class="btn btn--outline" href="/plugins/">Explore plugins</a></div>
+      <p class="storefront-note">Already have a license? <a href="/account/">Visit your account</a> for downloads.</p>
+      <noscript><p>JavaScript is needed for the embedded cart. <a href="https://conduitdsp.moonbase.sh/buy/robin-control-lite">Get Robin Control Lite on Moonbase</a>.</p></noscript>
     </div>
   </main>
 
@@ -105,6 +78,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
+        <div class="footer-brand"><a href="/">conduit.dsp<span aria-hidden="true">↗</span></a><p>A shorter path from idea to sound.</p></div>
         <div class="footer-col">
           <h4 class="footer-col__heading">Info</h4>
           <div class="footer-links">
@@ -143,7 +117,7 @@
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/storefront.js?v=20260922-3"></script>
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>
 </body>

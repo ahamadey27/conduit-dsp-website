@@ -1,3 +1,7 @@
+> **Historical snippet, not current instructions — September 19, 2026.** The old form and success-on-network-failure example below must not be reused. Current RC forms use `assets/js/waitlist.js`; see [integrations.md](integrations.md). Do not revive the disabled modal or enable storefront email sync from this example. [Moonbase migration plan](MOONBASE_MIGRATION.md).
+
+---
+
 Here's the complete solution. Two things to add to your site:
 1. Add to every page's </head> — the MailerLite universal script:
 

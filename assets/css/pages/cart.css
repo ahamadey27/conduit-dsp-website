@@ -152,3 +152,8 @@
     min-width: 60px;
   }
 }
+
+.cart-page__header, .cart-summary__row { border-width: 1px; }
+.cart-page__header h1 { font-family: var(--font-body); font-size: clamp(40px, 5vw, 60px); letter-spacing: -.045em; }
+.cart-empty { background: var(--bg-secondary); padding: 56px 24px; border: 1px solid var(--border); }
+.cart-item__name, .cart-summary__label { font-family: var(--font-body); }

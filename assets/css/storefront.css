@@ -1,0 +1,12 @@
+[data-moonbase-if][hidden], .storefront-notice[hidden] { display: none !important; }
+[data-store-action][aria-busy="true"] { cursor: progress; opacity: .65; }
+.cart-widget__link { gap: 7px; }
+.storefront-page { padding-block: 60px 80px; max-width: 780px; }
+.storefront-page h1 { font-size: clamp(36px, 5vw, 60px); letter-spacing: -.045em; margin-bottom: 20px; }
+.storefront-page > p { color: var(--text-muted); margin-block: 16px; max-width: 600px; }
+.storefront-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-block: 28px; }
+.storefront-note { font-size: 13px; line-height: 1.7; }
+.storefront-notice { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 110; width: max-content; max-width: calc(100% - 32px); background: var(--bg-primary); border: 1px solid var(--border); box-shadow: 0 8px 30px #2A252022; padding: 16px 20px; font-size: 14px; }
+.storefront-notice a { text-decoration: underline; }
+.storefront-notice button { margin-left: 16px; background: none; border: none; color: var(--text-muted); cursor: pointer; text-decoration: underline; }
+@media (max-width: 768px) { .storefront-page { padding-block: 36px 50px; } }

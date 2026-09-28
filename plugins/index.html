@@ -20,16 +20,16 @@
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/css/cart.css">
+  <link rel="stylesheet" href="/assets/css/storefront.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
-  <link rel="stylesheet" href="/assets/css/pages/home.css">
-  <link rel="stylesheet" href="/assets/css/pages/plugins.css">
+  <link rel="stylesheet" href="/assets/css/pages/home.css?v=20260918-2">
+  <link rel="stylesheet" href="/assets/css/pages/plugins.css?v=20260928-1">
   <link rel="stylesheet" href="/assets/css/waitlist.css">
   <!-- MailerLite Universal -->
   <script>
@@ -42,6 +42,7 @@
   <!-- End MailerLite Universal -->
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
@@ -50,7 +51,7 @@
         <a href="/" class="site-logo">
           <img src="/assets/images/logo.svg" alt="Conduit DSP">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul class="site-nav__list">
           <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown active">
@@ -61,67 +62,56 @@
             </div>
           </li>
           <li class="nav-item"><a href="/updates/">Updates</a></li>
-          <li class="nav-item"><a href="/cart/">Cart</a></li>
-          <!-- <li class="nav-item"><a href="/account/">Account</a></li> -->
+          <li class="nav-item"><a href="/account/" data-store-action="view_account">Account</a></li>
         </ul>
       </nav>
         <div class="cart-widget">
-          <a href="/cart/" class="cart-widget__link"><span id="cart-total">$0.00</span></a>
-          <select id="currency-select">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <a href="/cart/" class="cart-widget__link"><span id="cart-count" class="cart-count hidden">0</span></a>
+          <a href="/cart/" class="cart-widget__link" data-store-action="view_cart">Cart <span class="cart-count" hidden data-moonbase-if="cart.has_items" data-moonbase-render="cart.item_count">0</span></a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- ==================== MAIN CONTENT ==================== -->
-  <main class="main-content">
+  <main class="main-content" id="main-content">
     <div class="container">
 
       <!-- ========== Page Header + Subtitle ========== -->
       <div class="plugins-header">
-        <h1>Plugins</h1>
-        <p class="plugins-subtext">
-          Robin Control Lite is available in 64-bit VST3 for macOS and Windows, plus AU for macOS.<br>
-          AAX support is coming soon.
-        </p>
+        <h1 class="section-index"><span>01 / The instruments</span></h1>
       </div>
 
       <!-- ========== Plugin Cards Grid ========== -->
       <div class="plugins-grid">
 
         <!-- Robin Control Lite Card -->
-        <article class="plugin-card">
+        <article class="plugin-card plugin-card--lite">
           <a href="/plugins/robin-control-lite/" class="plugin-card__image plugin-card__image--screenshot">
-            <img src="/assets/images/RCL.png" alt="Robin Control Lite plugin interface">
+            <span class="product-label">01 / Robin Control Lite</span><img src="/assets/images/RCL_02.png" alt="Robin Control Lite plugin interface" width="2802" height="792"><span class="product-status">Available now · Free</span>
           </a>
           <div class="plugin-card__body">
             <h2 class="plugin-card__name"><a href="/plugins/robin-control-lite/">Robin Control Lite</a></h2>
-            <p class="plugin-card__desc">Take control of your sample randomization, no strings attached.</p>
-            <span class="plugin-card__price">Free</span>
-            <button class="btn btn--add-cart btn--outline" data-product-id="robin-control-lite" data-price="0" data-name="Robin Control Lite">Add to Cart</button>
+              <p class="plugin-card__summary">Small variations. A world of difference.</p>
+            <p class="plugin-card__meta">20 sample slots / Series + Random Playback / Controlled Parameter Randomization</p>
+              <div class="plugin-card__actions"><a class="btn btn--primary" href="https://conduitdsp.moonbase.sh/buy/robin-control-lite" data-store-action="add_to_cart" data-moonbase-if="!product.robin-control-lite.owned">Get Lite — Free</a><a class="btn btn--outline" href="https://conduitdsp.moonbase.sh/download/robin-control-lite" data-store-action="download_product" hidden data-moonbase-if="product.robin-control-lite.owned">Download Lite</a><a class="text-link" href="/plugins/robin-control-lite/">Explore Lite <span aria-hidden="true">↗</span></a></div>
           </div>
         </article>
 
         <!-- Robin Control Card -->
-        <article class="plugin-card">
+        <article class="plugin-card plugin-card--control">
           <a href="/plugins/robin-control/" class="plugin-card__image plugin-card__image--screenshot plugin-card__image--coming-soon">
-            <span class="plugin-card__image-frame">
-              <img src="/assets/images/robin-control-interface.png" alt="Robin Control plugin interface">
-              <span class="plugin-card__image-overlay">Coming Soon...</span>
-            </span>
+            <span class="product-label">02 / Robin Control</span><span class="plugin-card__image-frame">
+              <img src="/assets/images/robin-control-interface.png" alt="Robin Control plugin interface" width="2096" height="986">
+
+            </span><span class="product-status">In development · Coming soon</span>
           </a>
           <div class="plugin-card__body">
             <h2 class="plugin-card__name"><a href="/plugins/robin-control/">Robin Control</a></h2>
-            <p class="plugin-card__desc">Coming Soon...</p>
-            <div class="waitlist-signup">
-              <p class="waitlist-signup__lead">Let me know when Robin Control is available</p>
+              <p class="plugin-card__summary">More samples. More variation. More control.</p>
+              <p class="plugin-card__meta">40-slot Sample Pool / Two 20-slot Ponds / FS Mode / Auto-Chop / Controlled Parameter Randomization</p>
+            <a class="text-link product-explore" href="/plugins/robin-control/">Explore Robin Control <span aria-hidden="true">↗</span></a><div class="waitlist-signup">
+              <p class="waitlist-signup__lead">Be first in the loop.</p>
               <p class="waitlist-signup__benefit">Join the waitlist and get 50% off at launch.</p>
               <form class="waitlist-form" data-waitlist-form>
                 <div class="waitlist-form__controls">
@@ -136,7 +126,7 @@
           </div>
         </article>
 
-        
+
 
       </div>
     </div>
@@ -146,6 +136,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
+        <div class="footer-brand"><a href="/">conduit.dsp<span aria-hidden="true">↗</span></a><p>A shorter path from idea to sound.</p></div>
         <div class="footer-col">
           <h4 class="footer-col__heading">Info</h4>
           <div class="footer-links">
@@ -184,7 +175,7 @@
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/storefront.js?v=20260922-3"></script>
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/waitlist.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>

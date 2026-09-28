@@ -20,16 +20,17 @@
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/css/cart.css">
+  <link rel="stylesheet" href="/assets/css/storefront.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
@@ -38,7 +39,7 @@
         <a href="/" class="site-logo">
           <img src="/assets/images/logo.svg" alt="Conduit DSP">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul class="site-nav__list">
           <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown">
@@ -49,37 +50,30 @@
             </div>
           </li>
           <li class="nav-item"><a href="/updates/">Updates</a></li>
-          <li class="nav-item"><a href="/cart/">Cart</a></li>
-          <!-- <li class="nav-item"><a href="/account/">Account</a></li> -->
+          <li class="nav-item"><a href="/account/" data-store-action="view_account">Account</a></li>
         </ul>
       </nav>
         <div class="cart-widget">
-          <a href="/cart/" class="cart-widget__link"><span id="cart-total">$0.00</span></a>
-          <select id="currency-select">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <a href="/cart/" class="cart-widget__link"><span id="cart-count" class="cart-count hidden">0</span></a>
+          <a href="/cart/" class="cart-widget__link" data-store-action="view_cart">Cart <span class="cart-count" hidden data-moonbase-if="cart.has_items" data-moonbase-render="cart.item_count">0</span></a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- ==================== MAIN CONTENT ==================== -->
-  <main class="main-content">
+  <main class="main-content" id="main-content">
     <div class="container page-stub">
       <h1>End User License Agreement &mdash; Robin Control Lite</h1>
-      <p class="privacy-updated"><strong>Robin Control Lite</strong> &mdash; Version 1.0 &middot; Conduit DSP LLC &middot; Effective date: April 26, 2026</p>
+      <p class="privacy-updated"><strong>Robin Control Lite</strong> &mdash; Version 2.0.0 &middot; Conduit DSP LLC &middot; Effective date: September 22, 2026</p>
 
+      <p>These terms accompany version 2.0.0. Earlier distributions retain their accompanying terms.</p>
       <p>This Agreement is between you ("You") and <strong>Conduit DSP LLC</strong> ("Conduit DSP," "we," "us"), a New York limited liability company. By installing or using Robin Control Lite (the "Software") you agree to these terms. If you don't agree, don't install the Software.</p>
 
       <hr>
 
       <h2>1. License Grant</h2>
-      <p>The Software is provided <strong>free of charge</strong>. We grant you a non-exclusive, worldwide, royalty-free license to install and use Robin Control Lite on any number of computers you own or control, for personal or commercial music production. You may make backup copies for your own use.</p>
+      <p>The Software is provided <strong>free of charge</strong>. We grant you a non-exclusive, worldwide, royalty-free license to install and use Robin Control Lite on any number of computers you own or control, for personal or commercial music production. You may make backup copies for your own use. Version 2.0.0 requires a free Moonbase product license and activation; the current limit is 10 activated devices per license. Installation on additional computers does not itself activate them. Online-activated licenses allow up to 90 days without successful online validation, subject to the signed license expiry or revocation. A separate permanent offline activation flow is available.</p>
       <p>You <strong>may</strong> redistribute the original, unmodified installer to others provided it is distributed free of charge and includes this Agreement.</p>
       <p>You <strong>may not</strong> sell, rent, sublicense, or charge any fee for the Software itself.</p>
 
@@ -106,7 +100,7 @@
       <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL CONDUIT DSP BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF CONDUIT DSP HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. CONDUIT DSP'S TOTAL CUMULATIVE LIABILITY UNDER THIS AGREEMENT SHALL NOT EXCEED FIVE U.S. DOLLARS ($5.00).</p>
 
       <h2>7. Privacy</h2>
-      <p>Robin Control Lite does not collect, transmit, or store any user data. The Software runs entirely offline and does not phone home. If you provided an email address to download the Software, that data is handled per our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+      <p>Version 2.0.0 uses Moonbase for license activation, validation and deactivation. This flow processes license/account information, a device identifier and label, and network/software-version information. The Software stores a signed license locally, including the name and email supplied by Moonbase. Optional SDK analytics are disabled; the plugin does not upload audio samples, presets or DAW projects. Permanent offline activation exchanges request/response files using another connected device. See our <a href="/privacy-policy/">Privacy Policy</a> and contact <a href="mailto:hello@conduitdsp.com">hello@conduitdsp.com</a> with data questions.</p>
 
       <h2>8. Termination</h2>
       <p>This Agreement is effective until terminated. It will terminate automatically without notice if you fail to comply with any of its terms. Upon termination, you must uninstall and destroy all copies of the Software in your possession. Sections 3, 5, 6, and 9 survive termination.</p>
@@ -129,6 +123,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
+        <div class="footer-brand"><a href="/">conduit.dsp<span aria-hidden="true">↗</span></a><p>A shorter path from idea to sound.</p></div>
         <div class="footer-col">
           <h4 class="footer-col__heading">Info</h4>
           <div class="footer-links">
@@ -167,7 +162,7 @@
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/storefront.js?v=20260922-3"></script>
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>
 </body>

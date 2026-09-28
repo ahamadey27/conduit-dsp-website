@@ -20,16 +20,17 @@
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/css/cart.css">
+  <link rel="stylesheet" href="/assets/css/storefront.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
@@ -38,7 +39,7 @@
         <a href="/" class="site-logo">
           <img src="/assets/images/logo.svg" alt="Conduit DSP">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul class="site-nav__list">
           <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown">
@@ -49,43 +50,40 @@
             </div>
           </li>
           <li class="nav-item"><a href="/updates/">Updates</a></li>
-          <li class="nav-item"><a href="/cart/">Cart</a></li>
-          <!-- <li class="nav-item"><a href="/account/">Account</a></li> -->
+          <li class="nav-item"><a href="/account/" data-store-action="view_account">Account</a></li>
         </ul>
       </nav>
         <div class="cart-widget">
-          <a href="/cart/" class="cart-widget__link"><span id="cart-total">$0.00</span></a>
-          <select id="currency-select">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <a href="/cart/" class="cart-widget__link"><span id="cart-count" class="cart-count hidden">0</span></a>
+          <a href="/cart/" class="cart-widget__link" data-store-action="view_cart">Cart <span class="cart-count" hidden data-moonbase-if="cart.has_items" data-moonbase-render="cart.item_count">0</span></a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- ==================== MAIN CONTENT (Stub) ==================== -->
-  <main class="main-content">
+  <main class="main-content" id="main-content">
     <div class="container page-stub">
       <h1>FAQ</h1>
 
       <div class="faq-item">
         <h3>What platforms are supported?</h3>
-        <p>Robin Control Lite supports 64-bit VST3 on macOS and Windows, plus AU on macOS. AAX support is coming soon.</p>
+        <p>Robin Control Lite 2.0.0 supports macOS 11 or later on Apple Silicon and Intel Macs in VST3, AU, and AAX formats, plus 64-bit Windows 10 and 11 in VST3 and AAX formats. Check your <a href="/account/">account downloads</a> for available installers.</p>
       </div>
 
       <div class="faq-item">
         <h3>What DAWs are compatible?</h3>
-        <p>Robin Control Lite works in DAWs that support VST3 on macOS or Windows, or AU on macOS, including Ableton Live, Logic Pro, FL Studio, Reaper, Studio One, and more. AAX support for Pro Tools is coming soon.</p>
+        <p>Robin Control Lite 2.0.0 works in compatible macOS and Windows DAWs. VST3 hosts include Ableton Live, REAPER, and Studio One; AU supports Logic Pro on Mac; and AAX supports Pro Tools on both platforms.</p>
       </div>
 
       <div class="faq-item">
         <h3>How do I install a plugin?</h3>
-        <p>After checkout, Lemon Squeezy emails your download link. Download and run the installer, follow the on-screen instructions, then restart or rescan your DAW if the plugin does not appear immediately.</p>
+        <p>Get your free Robin Control Lite license through Moonbase, then download the installer from your fulfillment email or <a href="/account/">account</a>. Close your DAW before installing, then reopen it and activate the plugin using the email associated with your license. Restart or rescan your DAW if the plugin does not appear immediately.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does Lite require activation?</h3>
+        <p>Version 2.0.0 requires a free Moonbase license, with up to 10 activated devices. Online licenses allow up to 90 days without successful online validation, subject to license expiry or revocation. A separate permanent offline activation flow is available. See the <a href="/eula/robin-control-lite/">license terms</a>.</p>
       </div>
 
       <div class="faq-item">
@@ -114,6 +112,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
+        <div class="footer-brand"><a href="/">conduit.dsp<span aria-hidden="true">↗</span></a><p>A shorter path from idea to sound.</p></div>
         <div class="footer-col">
           <h4 class="footer-col__heading">Info</h4>
           <div class="footer-links">
@@ -152,7 +151,7 @@
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/storefront.js?v=20260922-3"></script>
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>
 </body>

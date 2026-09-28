@@ -1,3 +1,7 @@
+> **Historical policy reference — September 22, 2026; not the current worktree policy.** The July policy body below is retained as a historical record. The redesign's `privacy-policy/index.html` already contains Moonbase account, checkout and activation disclosures, but is not deployed. Customer/license migration is complete and Alex confirmed MailerLite sync; see [integrations.md](integrations.md). Review the updated HTML policy before deployment. Do not publish this note or restore the historical body over the updated page.
+
+---
+
 # **Privacy Policy**
 
 Last updated: July 25, 2026  ·  This policy applies to conduitdsp.com and all Conduit DSP products.

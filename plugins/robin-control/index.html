@@ -20,18 +20,19 @@
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/css/cart.css">
+  <link rel="stylesheet" href="/assets/css/storefront.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
-  <link rel="stylesheet" href="/assets/css/pages/plugin-detail.css">
+  <link rel="stylesheet" href="/assets/css/pages/plugin-detail.css?v=20260928-1">
   <link rel="stylesheet" href="/assets/css/waitlist.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
@@ -40,7 +41,7 @@
         <a href="/" class="site-logo">
           <img src="/assets/images/logo.svg" alt="Conduit DSP">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul class="site-nav__list">
           <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown active">
@@ -51,28 +52,26 @@
             </div>
           </li>
           <li class="nav-item"><a href="/updates/">Updates</a></li>
-          <li class="nav-item"><a href="/cart/">Cart</a></li>
-          <!-- <li class="nav-item"><a href="/account/">Account</a></li> -->
+          <li class="nav-item"><a href="/account/" data-store-action="view_account">Account</a></li>
         </ul>
       </nav>
         <div class="cart-widget">
-          <a href="/cart/" class="cart-widget__link"><span id="cart-total">$0.00</span></a>
-          <select id="currency-select">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <a href="/cart/" class="cart-widget__link"><span id="cart-count" class="cart-count hidden">0</span></a>
+          <a href="/cart/" class="cart-widget__link" data-store-action="view_cart">Cart <span class="cart-count" hidden data-moonbase-if="cart.has_items" data-moonbase-render="cart.item_count">0</span></a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- ==================== MAIN CONTENT ==================== -->
-  <main class="main-content">
+  <main class="main-content" id="main-content">
     <div class="plugin-detail">
+      <a class="back-link" href="/plugins/">← All plugins</a>
+      <div class="plugin-detail__header">
+        <p class="eyebrow">In development / Coming soon</p>
+        <h1 class="plugin-detail__name">Robin Control</h1>
+        <p class="plugin-detail__tagline">More samples. More variation. More control.</p>
+      </div>
 
       <!-- ========== Hero Image ========== -->
       <div class="plugin-detail__hero-wrap">
@@ -81,14 +80,11 @@
           alt="Robin Control plugin interface"
           class="plugin-detail__hero"
         >
-        <div class="plugin-detail__hero-overlay" aria-label="Coming Soon">
-          <span>Coming Soon...</span>
-        </div>
       </div>
 
       <!-- ========== Pre-Launch Waitlist ========== -->
       <div class="waitlist-signup waitlist-signup--detail">
-        <p class="waitlist-signup__lead">Let me know when Robin Control is available</p>
+        <p class="waitlist-signup__lead">A little more control is on the way.</p>
         <p class="waitlist-signup__benefit">Join the waitlist and get 50% off at launch.</p>
         <form class="waitlist-form" data-waitlist-form>
           <div class="waitlist-form__controls">
@@ -102,10 +98,7 @@
       </div>
 
       <!-- ========== Plugin Name and Tagline ========== -->
-      <div class="plugin-detail__header">
-        <h1 class="plugin-detail__name">Robin Control</h1>
-        <p class="plugin-detail__tagline">More samples. More movement. More control.</p>
-      </div>
+
 
       <!-- ========== YouTube Video Embed (uncomment when video ID is available) ========== -->
       <!-- <div class="plugin-detail__video">
@@ -118,7 +111,7 @@
 
       <!-- ========== Description Text ========== -->
       <div class="plugin-detail__description">
-        <p>Robin Control turns a folder of one-shots into a responsive instrument for controlled variation. Load up to 40 core samples into the Pool, play them in order or as a shuffled no-repeat cycle, then shape every hit without stopping to edit each file in your DAW.</p>
+        <p>Robin Control turns a folder of one-shots into a responsive instrument for controlled variation. Load up to 40 core samples into the Pool, play them in order or as a shuffled no-repeat cycle, then shape every hit with controlled parameter randomization, without stopping to edit each file in your DAW.</p>
         <p>Two 20-slot Ponds take the idea further. Use independent probability controls to replace a Pool hit, layer extra detail, or add delayed alternates. Each Pond keeps its own playback order, level, and timing, so a single MIDI note can move from subtle variation to a three-voice performance.</p>
         <p>Working with footsteps? FS Mode gives white and black MIDI keys separate sample sets and links each side to its own Pond. Working from a long field recording? Auto-Chop detects attacks, lets you refine and audition the markers, and sends the finished one-shots straight into Robin Control.</p>
         <p>Save the whole setup—including its audio—as a portable preset. Your sounds, routing, and carefully dialed-in weirdness travel together.</p>
@@ -126,7 +119,7 @@
 
       <!-- ========== Features List ========== -->
       <div class="plugin-detail__features">
-        <h3>Description:</h3>
+        <h2>Under the hood.</h2>
         <ul>
           <li><b>40-Slot Sample Pool: </b>Rotate through one-shots in displayed Series order or a shuffled Random order that plays every loaded sample before reshuffling.</li>
           <li><b>Two Probability-Driven Ponds: </b>Add up to 20 alternate samples per Pond, then use independent Probability, Volume, Delay, and Series/Random controls to decide when and how they appear.</li>
@@ -148,6 +141,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
+        <div class="footer-brand"><a href="/">conduit.dsp<span aria-hidden="true">↗</span></a><p>A shorter path from idea to sound.</p></div>
         <div class="footer-col">
           <h4 class="footer-col__heading">Info</h4>
           <div class="footer-links">
@@ -186,7 +180,7 @@
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/storefront.js?v=20260922-3"></script>
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/waitlist.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>

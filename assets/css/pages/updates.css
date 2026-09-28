@@ -96,3 +96,10 @@
 .update-table tbody tr:nth-child(odd) {
   background: var(--bg-secondary);
 }
+
+.updates-header { border-bottom-width: 1px; padding-top: 56px; }
+.updates-header h1 { font-family: var(--font-body); font-size: clamp(36px, 5vw, 56px); letter-spacing: -.045em; }
+.update-accordion__name { font-family: var(--font-body); font-size: 22px; letter-spacing: -.025em; }
+.update-accordion__trigger { padding-block: 22px; }
+.update-table th, .update-table td { padding-left: 12px; }
+@media (max-width: 480px) { .update-table td:first-child { width: auto; white-space: normal; } .update-table th, .update-table td { padding-inline: 7px; font-size: 12px; } }

@@ -72,3 +72,7 @@
     width: 100%;
   }
 }
+
+.cookie-banner { box-shadow: 0 -4px 24px #2A252018; }
+.cookie-banner__btn { min-height: 42px; }
+@media (min-width: 481px) and (max-width: 768px) { .cookie-banner { flex-wrap: wrap; gap: 12px; } }

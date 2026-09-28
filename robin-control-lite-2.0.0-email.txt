@@ -1,0 +1,39 @@
+SUBJECT: Robin Control Lite 2.0.0 is here — now with AAX
+
+PREHEADER: Download the free update for Pro Tools, VST3, or AU on macOS and Windows.
+
+
+Robin Control Lite now works in Pro Tools.
+
+Robin Control Lite 2.0.0 is now available, adding AAX support for Pro Tools on macOS and Windows.
+
+The update also adds interface scaling and clearer sample-playback feedback. It’s still completely free.
+
+We’ve moved Robin Control Lite downloads and license management to Moonbase. Your existing license has already been added using the email address associated with your Robin Control Lite download—there’s no need to purchase or register for the plugin again.
+
+DOWNLOAD ROBIN CONTROL LITE 2.0.0
+https://conduitdsp.moonbase.sh/download/robin-control-lite
+
+
+Download and install
+
+1. Open the download link and sign in using the email address this message was sent to.
+2. If this is your first time accessing Moonbase, choose “Forgot password” to set your password.
+3. Download the macOS .pkg or Windows .exe installer.
+4. Quit your DAW, run the installer, and reopen your DAW.
+5. Open Robin Control Lite and click “Activate.” Your browser will open so you can authorize the same Moonbase account.
+
+macOS: AU, VST3, and AAX
+Windows: VST3 and AAX
+
+Robin Control Lite does not require a separate iLok license. If you’ve already installed and activated version 2.0.0, you’re all set.
+
+Questions or trouble accessing your license? Reply to this email or contact hello@conduitdsp.com.
+
+Thanks,
+Alex
+conduit.dsp
+A shorter path from idea to sound
+
+
+You’re receiving this email because you signed up for Robin Control Lite downloads and updates.

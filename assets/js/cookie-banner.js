@@ -32,13 +32,14 @@
   var resetButton = document.getElementById('privacy-reset-analytics');
   if (resetButton) {
     resetButton.addEventListener('click', function () {
-      localStorage.removeItem(consentKey);
+      try { localStorage.removeItem(consentKey); } catch (_) { /* Storage can be blocked. */ }
       clearAnalyticsCookies();
       window.location.reload();
     });
   }
 
-  var consent = localStorage.getItem(consentKey);
+  var consent;
+  try { consent = localStorage.getItem(consentKey); } catch (_) { /* Ask for this visit. */ }
   if (consent === 'accepted') {
     loadAnalytics();
     return;
@@ -52,11 +53,35 @@
   if (!banner || !acceptButton || !rejectButton) return;
 
   function savePreference(value) {
-    localStorage.setItem(consentKey, value);
+    try { localStorage.setItem(consentKey, value); } catch (_) { /* Honor the choice for this visit. */ }
     banner.classList.add('hidden');
+    updateBannerSpace();
+    // Dismissing a focused control must not leave focus in hidden content.
+    document.getElementById('main-content').focus({ preventScroll: true });
   }
 
+  function updateBannerSpace() {
+    var fixed = getComputedStyle(banner).position === 'fixed';
+    var height = fixed && !banner.classList.contains('hidden') ? banner.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--cookie-banner-height', height + 'px');
+  }
   banner.classList.remove('hidden');
+  updateBannerSpace();
+  if (window.ResizeObserver) new ResizeObserver(updateBannerSpace).observe(banner);
+  window.addEventListener('resize', updateBannerSpace);
+
+  document.addEventListener('focusin', function (event) {
+    var target = event.target;
+    var header = document.querySelector('.site-header');
+    // Moonbase manages focus inside its own dialogs.
+    if (!target.closest('.main-content, .site-footer') || target.id === 'main-content') return;
+    var rect = target.getBoundingClientRect();
+    var bottom = banner.classList.contains('hidden') || getComputedStyle(banner).position !== 'fixed'
+      ? window.innerHeight : banner.getBoundingClientRect().top;
+    if (rect.top < header.getBoundingClientRect().bottom || rect.bottom > bottom) {
+      target.scrollIntoView({ block: 'center', behavior: 'instant' });
+    }
+  });
 
   acceptButton.addEventListener('click', function () {
     savePreference('accepted');

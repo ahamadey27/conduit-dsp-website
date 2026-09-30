@@ -1,3 +1,7 @@
+> **Superseded historical specification — September 19, 2026.** Do not implement from this document. Its styling, pricing, cart, account, and provider assumptions are stale. Follow [AGENTS.md](AGENTS.md), [CONDUIT_DSP_CONTEXT.md](CONDUIT_DSP_CONTEXT.md), [DESIGN_NOTES.md](DESIGN_NOTES.md), and [MOONBASE_MIGRATION.md](MOONBASE_MIGRATION.md). The original specification remains below for historical reference.
+
+---
+
 # Conduit DSP — Website Specification
 > For use with Claude Code / VS Code build. Reference aesthetic: https://aberrantdsp.com/ — minimal, dark, product-first.
 

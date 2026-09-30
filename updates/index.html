@@ -20,17 +20,18 @@
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/css/cart.css">
+  <link rel="stylesheet" href="/assets/css/storefront.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
   <link rel="stylesheet" href="/assets/css/pages/updates.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
@@ -39,44 +40,37 @@
         <a href="/" class="site-logo">
           <img src="/assets/images/logo.svg" alt="Conduit DSP">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul class="site-nav__list">
           <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown">
             <a href="/plugins/">Plugins</a>
-            <div class="dropdown-menu">
+            <button class="nav-dropdown-toggle" type="button" aria-label="Show plugin links" aria-expanded="false" aria-controls="plugin-menu"><span aria-hidden="true">▾</span></button>
+            <div id="plugin-menu" class="dropdown-menu">
               <a href="/plugins/robin-control/">Robin Control</a>
               <a href="/plugins/robin-control-lite/">Robin Control Lite</a>
             </div>
           </li>
           <li class="nav-item active"><a href="/updates/">Updates</a></li>
-          <li class="nav-item"><a href="/cart/">Cart</a></li>
-          <!-- <li class="nav-item"><a href="/account/">Account</a></li> -->
+          <li class="nav-item"><a href="/account/" data-store-action="view_account">Account</a></li>
         </ul>
       </nav>
         <div class="cart-widget">
-          <a href="/cart/" class="cart-widget__link"><span id="cart-total">$0.00</span></a>
-          <select id="currency-select">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <a href="/cart/" class="cart-widget__link"><span id="cart-count" class="cart-count hidden">0</span></a>
+          <a href="/cart/" class="cart-widget__link" data-store-action="view_cart">Cart <span class="cart-count" hidden data-moonbase-if="cart.has_items" data-moonbase-render="cart.item_count">0</span></a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- ==================== MAIN CONTENT ==================== -->
-  <main class="main-content">
+  <main class="main-content" id="main-content" tabindex="-1">
     <div class="updates-container">
 
       <!-- ========== Page Header ========== -->
       <div class="updates-header">
         <h1>Plugin Updates</h1>
-        <!-- <p>All updates are available from <strong>My Account &gt; Downloads</strong>.</p> -->
+        <p>Current downloads are available from your <a href="/account/">Moonbase account</a>. Earlier purchases remain accessible through their original receipts.</p>
       </div>
 
       <!-- ========== Robin Control Update Accordion ========== -->
@@ -89,8 +83,8 @@
           <table class="update-table">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Version / Notes</th>
+                <th scope="col">Date</th>
+                <th scope="col">Version / Notes</th>
               </tr>
             </thead>
             <tbody>
@@ -118,16 +112,26 @@
           <table class="update-table">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Version / Notes</th>
+                <th scope="col">Date</th>
+                <th scope="col">Version / Notes</th>
               </tr>
             </thead>
-            <tbody> 
+            <tbody>
+              <tr>
+                <td>09/22/2026</td>
+                <td>
+                  <strong>v2.0.0</strong><br>
+                  &ndash; Free Moonbase licensing and activation<br>
+                  &ndash; Added AAX support for Pro Tools on macOS and Windows, alongside VST3 on both platforms and AU on macOS<br>
+                  &ndash; Visual feedback in the sample pool shows which sample is playing<br>
+                  &ndash; New interface scaling button lets you adjust the plugin window size
+                </td>
+              </tr>
               <tr>
                 <td>05/11/2026</td>
                 <td>
                   <strong>v1.0</strong><br>
-                  &ndash; Initial release. AAX support is in development and will follow in a future update.
+                  &ndash; Initial release
                 </td>
               </tr>
             </tbody>
@@ -141,26 +145,28 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
+        <div class="footer-brand"><a href="/">conduit.dsp<span aria-hidden="true">↗</span></a><p>A shorter path from idea to sound.</p></div>
         <div class="footer-col">
-          <h4 class="footer-col__heading">Info</h4>
+          <h2 class="footer-col__heading">Info</h2>
           <div class="footer-links">
             <a href="/faq/">FAQ</a>
             <a href="mailto:hello@conduitdsp.com">Contact Us</a>
+            <a href="mailto:hello@conduitdsp.com?subject=Website%20accessibility%20help">Accessibility help</a>
             <a href="/privacy-policy/">Privacy Policy</a>
             <a href="/eula/robin-control-lite/">EULA</a>
           </div>
         </div>
         <div class="footer-col">
-          <h4 class="footer-col__heading">Connect</h4>
+          <h2 class="footer-col__heading">Connect</h2>
           <div class="footer-socials">
             <a href="https://www.instagram.com/conduit.dsp/" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
             <a href="https://www.youtube.com/@conduitdsp" aria-label="YouTube" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
             </a>
             <a href="https://www.tiktok.com/@conduit.dsp" aria-label="TikTok" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
             </a>
           </div>
         </div>
@@ -170,7 +176,7 @@
   </footer>
 
   <!-- ==================== COOKIE CONSENT ==================== -->
-  <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-live="polite" aria-label="Analytics preferences">
+  <div id="cookie-banner" class="cookie-banner hidden" role="region" aria-label="Analytics preferences">
     <p class="cookie-banner__text">We use optional analytics to understand what is useful. The site works either way. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
     <div class="cookie-banner__actions">
       <button id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--secondary" type="button">No thanks</button>
@@ -179,7 +185,7 @@
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/storefront.js?v=20260922-3"></script>
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>
 </body>

@@ -20,15 +20,15 @@
   <!-- Google Fonts: DM Serif Display (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/css/cart.css">
+  <link rel="stylesheet" href="/assets/css/storefront.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
-  <link rel="stylesheet" href="/assets/css/pages/home.css">
+  <link rel="stylesheet" href="/assets/css/pages/home.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/waitlist.css">
   <!-- MailerLite Universal -->
   <script>
@@ -41,6 +41,7 @@
   <!-- End MailerLite Universal -->
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ==================== HEADER: Logo, Cart Widget, Navigation ==================== -->
   <header class="site-header">
@@ -49,84 +50,84 @@
         <a href="/" class="site-logo">
           <img src="/assets/images/logo.svg" alt="Conduit DSP">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul class="site-nav__list">
           <li class="nav-item active"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown">
             <a href="/plugins/">Plugins</a>
-            <div class="dropdown-menu">
+            <button class="nav-dropdown-toggle" type="button" aria-label="Show plugin links" aria-expanded="false" aria-controls="plugin-menu"><span aria-hidden="true">▾</span></button>
+            <div id="plugin-menu" class="dropdown-menu">
               <a href="/plugins/robin-control/">Robin Control</a>
               <a href="/plugins/robin-control-lite/">Robin Control Lite</a>
             </div>
           </li>
           <li class="nav-item"><a href="/updates/">Updates</a></li>
-          <li class="nav-item"><a href="/cart/">Cart</a></li>
-          <!-- <li class="nav-item"><a href="/account/">Account</a></li> -->
+          <li class="nav-item"><a href="/account/" data-store-action="view_account">Account</a></li>
         </ul>
       </nav>
         <div class="cart-widget">
-          <a href="/cart/" class="cart-widget__link"><span id="cart-total">$0.00</span></a>
-          <select id="currency-select">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <a href="/cart/" class="cart-widget__link"><span id="cart-count" class="cart-count hidden">0</span></a>
+          <a href="/cart/" class="cart-widget__link" data-store-action="view_cart">Cart <span class="cart-count" hidden data-moonbase-if="cart.has_items" data-moonbase-render="cart.item_count">0</span></a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- ==================== MAIN CONTENT ==================== -->
-  <main class="main-content">
+  <main class="main-content" id="main-content" tabindex="-1">
+
+
+    <h1 class="sr-only">Audio plugins from conduit.dsp</h1>
 
     <!-- ========== Plugin Cards Grid ========== -->
-    <section class="home-plugins">
+    <section class="home-plugins" id="plugins" aria-label="Our plugins">
       <div class="container">
+        <div class="section-index"><span>01 / The instruments</span></div>
         <div class="home-plugins__grid">
 
           <!-- Robin Control Lite Card -->
-          <article class="plugin-card">
+          <article class="plugin-card plugin-card--lite">
             <a href="/plugins/robin-control-lite/" class="plugin-card__image plugin-card__image--screenshot">
-              <img src="/assets/images/RCL.png" alt="Robin Control Lite plugin interface">
+              <span class="product-label">01 / Robin Control Lite</span><img src="/assets/images/RCL_02.png" alt="Robin Control Lite plugin interface" width="2802" height="792"><span class="product-status">Available now · Free</span>
             </a>
             <div class="plugin-card__body">
               <h2 class="plugin-card__name"><a href="/plugins/robin-control-lite/">Robin Control Lite</a></h2>
-              <span class="plugin-card__price">Free</span>
-              <button class="btn btn--add-cart btn--outline" data-product-id="robin-control-lite" data-price="0" data-name="Robin Control Lite">Add to Cart</button>
+              <p class="plugin-card__summary">Small variations. A world of difference.</p>
+              <p class="plugin-card__meta">20 sample slots / Series + Random Playback / Controlled Parameter Randomization</p>
+              <div class="plugin-card__actions"><a class="btn btn--primary" href="https://conduitdsp.moonbase.sh/buy/robin-control-lite" data-store-action="add_to_cart" data-moonbase-if="!product.robin-control-lite.owned">Get Lite — Free</a><a class="btn btn--outline" href="https://conduitdsp.moonbase.sh/download/robin-control-lite" data-store-action="download_product" hidden data-moonbase-if="product.robin-control-lite.owned">Download Lite</a><a class="text-link" href="/plugins/robin-control-lite/">Explore Lite <span aria-hidden="true">↗</span></a></div>
             </div>
           </article>
 
           <!-- Robin Control Card -->
-          <article class="plugin-card">
+          <article class="plugin-card plugin-card--control">
             <a href="/plugins/robin-control/" class="plugin-card__image plugin-card__image--screenshot plugin-card__image--coming-soon">
-              <span class="plugin-card__image-frame">
-                <img src="/assets/images/robin-control-interface.png" alt="Robin Control plugin interface">
-                <span class="plugin-card__image-overlay">Coming Soon...</span>
-              </span>
+              <span class="product-label">02 / Robin Control</span><span class="plugin-card__image-frame">
+                <img src="/assets/images/robin-control-interface.png" alt="Robin Control plugin interface" width="2096" height="986">
+
+              </span><span class="product-status">In development · Coming soon</span>
             </a>
             <div class="plugin-card__body">
               <h2 class="plugin-card__name"><a href="/plugins/robin-control/">Robin Control</a></h2>
-              <span class="plugin-card__price">Coming Soon...</span>
-              <div class="waitlist-signup">
-                <p class="waitlist-signup__lead">Let me know when Robin Control is available</p>
+              <p class="plugin-card__summary">More samples. More variation. More control.</p>
+              <p class="plugin-card__meta">40-slot Sample Pool / Two 20-slot Ponds / FS Mode / Auto-Chop / Controlled Parameter Randomization</p>
+
+              <a class="text-link product-explore" href="/plugins/robin-control/">Explore Robin Control <span aria-hidden="true">↗</span></a><div class="waitlist-signup">
+                <p class="waitlist-signup__lead">Be first in the loop.</p>
                 <p class="waitlist-signup__benefit">Join the waitlist and get 50% off at launch.</p>
                 <form class="waitlist-form" data-waitlist-form>
+                  <label class="waitlist-form__label" for="robin-control-waitlist-email">Email address (required)</label>
                   <div class="waitlist-form__controls">
-                    <label class="waitlist-form__label" for="robin-control-waitlist-email">Email address</label>
-                    <input id="robin-control-waitlist-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                    <input id="robin-control-waitlist-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" aria-describedby="waitlist-consent" required>
                     <button type="submit" class="btn btn--waitlist">Notify me</button>
                   </div>
-                  <p class="waitlist-form__consent">By subscribing, you agree to receive Robin Control launch and promotional emails. Unsubscribe anytime. <a href="/privacy-policy/">Privacy Policy</a>.</p>
-                  <p class="waitlist-form__status" data-waitlist-status aria-live="polite" hidden></p>
+                  <p id="waitlist-consent" class="waitlist-form__consent">By subscribing, you agree to receive Robin Control launch and promotional emails. Unsubscribe anytime. <a href="/privacy-policy/">Privacy Policy</a>.</p>
+                  <p class="waitlist-form__status" data-waitlist-status role="status" aria-live="polite" aria-atomic="true"></p>
                 </form>
               </div>
             </div>
           </article>
 
-          
+
 
         </div>
       </div>
@@ -137,9 +138,9 @@
       <div class="container">
         <!-- <img src="/assets/images/banner-about.jpg" alt="About Conduit DSP" class="about-banner"> -->
         <div class="home-about__text">
-          <p style="font-size: 24px;"><b><strong>ABOUT</strong></b></p>
-          <p>conduit.dsp is an audio plugin company committed to creating unique devices designed to shorten the conduit between ideas and creation...hence the name!</p>
-          <p>We're just getting started, so expect plugins that make you think, "Wow. So no one's thought of that yet?" We're a small operation, and if you subscribe or download one of our plugins, we may occasionally email you about product updates, future releases, and discounts. We promise not to bombard you, and you can unsubscribe whenever you like.</p>
+          <p class="eyebrow">02 / A note from conduit.dsp</p>
+          <p>We make audio plugins that shorten the path between an idea and the sound in your head. Focused tools, a few unusual ideas, and enough room to make them your own.</p>
+          <p>We're a small operation, and if you opt in to our emails, we may occasionally contact you about product updates, future releases, and discounts. We promise not to bombard you, and you can unsubscribe whenever you like.</p>
         </div>
       </div>
     </section>
@@ -148,14 +149,13 @@
     <section class="home-newsletter">
       <div class="container">
         <div class="home-newsletter__inner">
-          <p style="font-size: 24px;"><b><strong>STAY IN THE LOOP</strong></b></p>
+          <p class="eyebrow">Occasional transmissions</p><h2>Stay in the loop.</h2>
           <p>Join our mailing list for product updates and exclusive discount codes.</p>
-          <form id="newsletter-form" class="newsletter-form" novalidate>
-            <input type="email" name="email" placeholder="you@example.com" required>
+          <form id="newsletter-form" class="newsletter-form">
+            <label for="newsletter-email">Email address (required)</label><input id="newsletter-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
             <button type="submit" class="btn btn--submit">Subscribe</button>
           </form>
-          <div class="newsletter-success" hidden>Thanks for subscribing!</div>
-          <div class="newsletter-error" hidden>Something went wrong. Please try again.</div>
+          <div id="newsletter-status" role="status" aria-live="polite" aria-atomic="true"></div>
         </div>
       </div>
     </section>
@@ -165,26 +165,28 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
+        <div class="footer-brand"><a href="/">conduit.dsp<span aria-hidden="true">↗</span></a><p>A shorter path from idea to sound.</p></div>
         <div class="footer-col">
-          <h4 class="footer-col__heading">Info</h4>
+          <h2 class="footer-col__heading">Info</h2>
           <div class="footer-links">
             <a href="/faq/">FAQ</a>
             <a href="mailto:hello@conduitdsp.com">Contact Us</a>
+            <a href="mailto:hello@conduitdsp.com?subject=Website%20accessibility%20help">Accessibility help</a>
             <a href="/privacy-policy/">Privacy Policy</a>
             <a href="/eula/robin-control-lite/">EULA</a>
           </div>
         </div>
         <div class="footer-col">
-          <h4 class="footer-col__heading">Connect</h4>
+          <h2 class="footer-col__heading">Connect</h2>
           <div class="footer-socials">
             <a href="https://www.instagram.com/conduit.dsp/" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
             <a href="https://www.youtube.com/@conduitdsp" aria-label="YouTube" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
             </a>
             <a href="https://www.tiktok.com/@conduit.dsp" aria-label="TikTok" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
             </a>
           </div>
         </div>
@@ -194,7 +196,7 @@
   </footer>
 
   <!-- ==================== COOKIE CONSENT ==================== -->
-  <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-live="polite" aria-label="Analytics preferences">
+  <div id="cookie-banner" class="cookie-banner hidden" role="region" aria-label="Analytics preferences">
     <p class="cookie-banner__text">We use optional analytics to understand what is useful. The site works either way. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
     <div class="cookie-banner__actions">
       <button id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--secondary" type="button">No thanks</button>
@@ -203,49 +205,11 @@
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/storefront.js?v=20260922-3"></script>
   <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/waitlist.js"></script>
   <script src="/assets/js/cookie-banner.js"></script>
 
-  <!-- Newsletter form → MailerLite -->
-  <script>
-    (function () {
-      var ML_FORM_ID = '184331636279609031';
-      var ML_ACCOUNT_ID = '2241125';
-
-      var form = document.getElementById('newsletter-form');
-      if (!form) return;
-      var success = document.querySelector('.newsletter-success');
-      var error = document.querySelector('.newsletter-error');
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        success.hidden = true;
-        error.hidden = true;
-
-        var email = form.querySelector('input[name="email"]').value.trim();
-        if (!email) return;
-
-        var url = 'https://assets.mailerlite.com/jsonp/' + ML_ACCOUNT_ID +
-                  '/forms/' + ML_FORM_ID + '/subscribe';
-        var body = 'fields[email]=' + encodeURIComponent(email);
-
-        fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: body
-        })
-          .then(function (res) {
-            if (!res.ok) throw new Error('Subscribe failed');
-            form.reset();
-            success.hidden = false;
-          })
-          .catch(function () {
-            error.hidden = false;
-          });
-      });
-    })();
-  </script>
+  <script src="/assets/js/newsletter.js"></script>
 </body>
 </html>

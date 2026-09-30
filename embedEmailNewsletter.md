@@ -1,3 +1,7 @@
+> **Historical MailerLite export — September 19, 2026.** This raw export is not the maintained website integration. Inspect the newsletter in `index.html` and [integrations.md](integrations.md); do not paste this entire export into the refreshed site. Moonbase/email changes are tracked in [MOONBASE_MIGRATION.md](MOONBASE_MIGRATION.md).
+
+---
+
 <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1775464");</style>
     <style type="text/css">
     /* LOADER */

@@ -72,3 +72,12 @@
     width: 100%;
   }
 }
+
+.cookie-banner { box-shadow: 0 -4px 24px #2A252018; }
+.cookie-banner__btn { min-height: 42px; }
+@media (min-width: 481px) and (max-width: 768px) { .cookie-banner { flex-wrap: wrap; gap: 12px; } }
+
+.cookie-banner__actions { flex-wrap: wrap; justify-content: center; }
+.cookie-banner__btn { min-height: 44px; white-space: normal; }
+/* At heavy zoom a fixed banner can fill most of the viewport. Keep it in flow. */
+@media (max-height: 500px) { .cookie-banner { position: static; } }

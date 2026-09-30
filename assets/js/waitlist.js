@@ -14,7 +14,6 @@
       status.textContent = message;
       status.classList.remove('waitlist-form__status--success', 'waitlist-form__status--error');
       status.classList.add('waitlist-form__status--' + type);
-      status.hidden = false;
     }
 
     form.addEventListener('submit', function (event) {
@@ -30,7 +29,7 @@
       form.dataset.submitting = 'true';
       submitBtn.disabled = true;
       submitBtn.textContent = 'Joining...';
-      status.hidden = true;
+      setStatus('Joining the waitlist…', 'pending');
 
       var formData = new FormData();
       formData.append('fields[email]', input.value.trim());

@@ -129,3 +129,8 @@
 .waitlist-form__consent { font-size: 11px; line-height: 1.6; color: var(--text-muted); }
 .waitlist-signup--detail { padding: 28px; border-color: var(--border); background: var(--bg-secondary); }
 @media (max-width: 400px) { .waitlist-form__controls { flex-direction: column; } }
+
+.waitlist-form__label { position: static; display: block; width: auto; height: auto; margin: 0 0 8px; overflow: visible; clip: auto; white-space: normal; color: var(--text-muted); font-size: 13px; }
+.waitlist-form input[type="email"] { border-color: #81786C; }
+.waitlist-form input[type="email"]:focus-visible { outline: 3px solid var(--accent-deep); }
+.waitlist-form__status:empty { margin: 0; }

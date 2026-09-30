@@ -11,7 +11,7 @@
   --accent-deep:    #1F5C58;
   --clay:           #A45D43;
   --font-mono:      ui-monospace, SFMono-Regular, Consolas, monospace;
-  --danger:         #e05555;
+  --danger:         #B02D36;
   --white:          #ffffff;
 
   --font-display: 'DM Serif Display', serif;
@@ -176,7 +176,7 @@ a, button, input, select, summary { -webkit-tap-highlight-color: transparent; }
 .page-stub p { line-height: 1.8; margin-bottom: 18px; }
 .page-stub a { text-decoration: underline; text-underline-offset: 3px; }
 .faq-item { border-top: 1px solid var(--border); padding: 25px 0 12px; }
-.faq-item h3 { font-size: 19px; font-weight: 500; margin-bottom: 10px; }
+.faq-item h2 { font-size: 19px; font-weight: 500; margin-bottom: 10px; }
 @media (max-width: 600px) { .container { padding-inline: 20px; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -184,3 +184,20 @@ a, button, input, select, summary { -webkit-tap-highlight-color: transparent; }
 }
 .page-stub ul { padding-left: 20px; margin: 16px 0 24px; }
 .page-stub li { list-style: disc; color: var(--text-muted); line-height: 1.8; margin-bottom: 8px; }
+
+/* Keep keyboard focus visible above fixed header/consent surfaces. */
+html { scroll-padding-bottom: calc(var(--cookie-banner-height, 0px) + 20px); }
+body { padding-bottom: var(--cookie-banner-height, 0px); }
+:where(.site-header, .main-content, .site-footer, .cookie-banner, .storefront-notice) :focus-visible {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px white;
+}
+#main-content:focus { outline: none; box-shadow: none; }
+@media (forced-colors: active) {
+  :focus-visible { outline-color: Highlight !important; }
+  .btn, .cookie-banner__btn { border: 1px solid ButtonText; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+}

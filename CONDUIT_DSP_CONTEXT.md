@@ -8,6 +8,10 @@
 
 This file is a decision aid, not a substitute for inspecting the current repository or live service before making a change. It deliberately excludes passwords, API keys, signing credentials, and other secrets.
 
+## September 30, 2026 — canonical website checkout
+
+Alex approved publishing the accessibility fixes and reconciling the local project with the live redesign. The canonical working directory is now `/Users/alex/Documents/Github/conduit-dsp-website` on `main`; GitHub Pages deploys its root. The retained `.worktrees/visual-refresh` checkout is historical and contains unrelated palette artifacts. Do not follow older instructions to work there by default. VS Code Go Live uses the project root at `http://127.0.0.1:8765/`, already allowed by Moonbase. See [ACCESSIBILITY.md](ACCESSIBILITY.md) for checks and outstanding vendor issues.
+
 ## September 28, 2026 — implementation update (supersedes older snapshots below)
 
 The redesign uses Moonbase’s embedded storefront for cart/account/download flows and was authorized for production launch September 28. Tenant: `https://conduitdsp.moonbase.sh`; Lite product: `robin-control-lite`; free variation: `free`. The new free offer is configured with optional newsletter consent and current fulfillment instructions.

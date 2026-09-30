@@ -23,12 +23,12 @@ Conduit DSP's live static website and store:
 
 ## Current design system
 
-The warm implementation is authoritative. The `codex/visual-refresh` worktree contains the September 28 production launch recorded in [`DESIGN_NOTES.md`](DESIGN_NOTES.md). Inspect local CSS and current live state before changing tokens. Baseline values:
+The main project folder on `main` is the authoritative checkout for the September 28 redesign and September 30 accessibility updates. The older `.worktrees/visual-refresh` checkout is retained for reference, not the default workspace. See [`DESIGN_NOTES.md`](DESIGN_NOTES.md). Inspect local CSS and current live state before changing tokens. Current values:
 
-- Backgrounds: `#F5F3F0`, `#F0ECE8`
+- Backgrounds: `#F6F3ED`, `#EEE9E0`
 - Primary text: `#2A2520`
 - Teal accent: `#2D7A7A` (some CTA rules use `#1F5C5C`)
-- Display font: DM Serif Display
+- Headings: DM Sans; DM Serif Display for occasional accents
 - Body font: DM Sans
 - Logo font: IBM Plex Sans
 - Max-width: 1200px
@@ -84,8 +84,8 @@ assets/images/
 
 ## Moonbase migration rules
 
-- Continue in `.worktrees/visual-refresh` on `codex/visual-refresh`; preserve the existing uncommitted visual work.
-- Distinguish the integrated local worktree and saved Moonbase settings from the still-undeployed production website. Read `integrations.md` for current state and remaining verification.
+- Work from `/Users/alex/Documents/Github/conduit-dsp-website` on `main`. The redesign and accessibility updates are merged here; do not resume the old worktree by default. Preserve its unrelated palette artifacts.
+- GitHub Pages deploys the root of `main`. VS Code Go Live is configured for `http://127.0.0.1:8765/` from the project root, the preview origin already allowed by Moonbase. Read `integrations.md` for current state and remaining verification.
 - Use the shared embedded storefront integration. The linked `moonbase-cpp` repository is for plugin activation; website setup uses a separate JavaScript integration. Sources and alternatives are in the migration plan.
 - Keep one commerce state across pages when implementing; do not leave the legacy local cart and the new storefront competing.
 - Keep Moonbase as the only authentication UI. Do not publish a paid RC offer, price, or release date during a provider migration.

@@ -55,3 +55,22 @@
 @media (max-width: 768px) and (min-width: 401px) { .site-logo { flex-basis: 198px; width: 198px; } }
 @media (max-width: 400px) { .site-logo { flex-basis: 166px; width: 166px; } .cart-widget__total { display: none; } }
 @media (max-width: 360px) { .site-logo { flex-basis: 142px; width: 142px; } .site-logo img { width: 270px; height: 54px; left: -51px; top: -4px; } .site-header__top { gap: 4px; } }
+
+/* A separate disclosure keeps Plugins a normal destination link. */
+.nav-item--has-dropdown { display: flex; align-items: center; flex-wrap: wrap; }
+.nav-dropdown-toggle { display: none; align-items: center; justify-content: center; min-width: 28px; min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--text-muted); cursor: pointer; }
+.nav-ready .nav-dropdown-toggle { display: inline-flex; }
+.dropdown-menu[hidden] { display: none; }
+.nav-dropdown-toggle[aria-expanded="true"] span { transform: rotate(180deg); }
+.cart-widget__link { min-height: 44px; }
+html:not(.nav-ready) .nav-item--has-dropdown:hover .dropdown-menu,
+html:not(.nav-ready) .nav-item--has-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: none; }
+@media (max-width: 768px) {
+  .nav-item--has-dropdown > a { flex: 1; }
+  .nav-dropdown-toggle { min-width: 44px; }
+  html:not(.nav-ready) .site-header { position: relative; }
+  html:not(.nav-ready) .main-content { padding-top: 0; }
+  html:not(.nav-ready) .site-header__top { flex-wrap: wrap; }
+  html:not(.nav-ready) .site-nav { display: block; position: static; order: 4; width: 100%; max-height: none; }
+  html:not(.nav-ready) .nav-toggle { display: none; }
+}

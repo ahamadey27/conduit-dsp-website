@@ -4,7 +4,7 @@ Static HTML, CSS, and JavaScript for conduitdsp.com, hosted on GitHub Pages. No 
 
 ## Current production release
 
-The September 28 visual refresh and Moonbase integration were prepared in `.worktrees/visual-refresh` on `codex/visual-refresh` for publication to `main`. The site uses Moonbase for cart, accounts, checkout and Lite downloads; newsletter and waitlist forms use MailerLite.
+The September 28 visual refresh, Moonbase integration, and September 30 accessibility updates are merged into the main project folder on `main`. GitHub Pages publishes this branch from the repository root. The site uses Moonbase for cart, accounts, checkout and Lite downloads; newsletter and waitlist forms use MailerLite.
 
 September 22: all 180 imported RCL customers now own Lite. The license import added 179 perpetual licenses and skipped one existing owner. Alex confirmed synchronization to MailerLite. Do not rerun that license import. See [integrations.md](integrations.md) for the completed report and data mapping.
 
@@ -17,18 +17,21 @@ Both macOS and Windows 2.0.0 installers are available through Moonbase. Post-dep
 - [MOONBASE_MIGRATION.md](MOONBASE_MIGRATION.md): completed migration scope and remaining launch checklist.
 - [integrations.md](integrations.md): current wiring, dashboard changes and remaining verification.
 - [DESIGN_NOTES.md](DESIGN_NOTES.md): visual direction and previous verification.
+- [ACCESSIBILITY.md](ACCESSIBILITY.md): WCAG target, September 30 audit, repeatable checks and open Moonbase issues.
 
 `spec.md`, `notifyButton.md`, and `embedEmailNewsletter.md` retain historical references. They do not override the guidance above.
 
 ## Preview
 
-Run from the worktree directory:
+Open `/Users/alex/Documents/Github/conduit-dsp-website` in VS Code and use **Go Live**. Workspace settings serve the project root at `http://127.0.0.1:8765/`, matching the Moonbase preview allowlist. Stop any existing server on that port before starting Go Live.
+
+For a terminal preview, run from the main project directory:
 
 ```sh
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:8765/. The worktree persists on disk; this address works while a server is running on that port and serving that worktree. Restart it from the same directory after a shutdown. This origin is allowed in Moonbase. The preview uses hosted checkout because Moonbase’s frame policy does not permit HTTP 127.0.0.1; HTTPS production uses its normal desktop overlay/mobile redirect.
+Open http://127.0.0.1:8765/. This address works while Go Live or the terminal server is running. Restart it from the main project folder after a shutdown. The retained `.worktrees/visual-refresh` directory is an old development checkout, not the default preview source. This origin is allowed in Moonbase. The preview uses hosted checkout because Moonbase’s frame policy does not permit HTTP 127.0.0.1; HTTPS production uses its normal desktop overlay/mobile redirect.
 
 ## Verification
 

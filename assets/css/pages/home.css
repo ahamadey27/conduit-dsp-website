@@ -12,7 +12,7 @@
 .plugin-card__image-frame { display: block; width: 100%; }
 .product-label { position: absolute; top: 18px; left: 20px; color: #3F5B50; font-size: 10px; }
 .product-status { position: absolute; bottom: 17px; right: 20px; font-size: 9px; color: #3F5B50; }
-.plugin-card--control .product-label, .plugin-card--control .product-status { color: #795741; }
+.plugin-card--control .product-label, .plugin-card--control .product-status { color: #694832; }
 .plugin-card__body { padding: 24px 0 0; }
 .plugin-card__name { font-size: clamp(24px, 2.7vw, 30px); font-weight: 500; letter-spacing: -.04em; }
 .plugin-card__name a:hover { text-decoration: none; color: var(--accent-deep); }
@@ -53,3 +53,9 @@
   .newsletter-form .btn { flex-grow: 1; }
 }
 @media (max-width: 680px) { .plugin-card__image { height: 240px; } }
+
+.newsletter-form { flex-wrap: wrap; }
+.newsletter-form label { flex-basis: 100%; font-size: 13px; }
+.newsletter-form input { flex: 1 1 180px; border-color: #C4D6CC; }
+#newsletter-status { grid-column: 2; margin-top: 12px; font-size: 14px; }
+#newsletter-status:empty { margin: 0; }

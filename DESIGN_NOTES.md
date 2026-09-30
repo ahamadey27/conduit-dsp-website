@@ -1,6 +1,6 @@
 # Visual refresh
 
-An isolated design pass on `codex/visual-refresh`. The live website has not been deployed or changed.
+The redesign launched September 28, 2026. On September 30, the approved accessibility updates and redesign were consolidated into the main project folder on `main`. This is the default editing and preview location; `.worktrees/visual-refresh` is retained as a historical development checkout.
 
 ## Direction
 
@@ -10,7 +10,7 @@ An isolated design pass on `codex/visual-refresh`. The live website has not been
 - Keep the homepage compact: two products, a short company note, and newsletter.
 - September 22 feedback supersedes the September 18 hero direction: remove the tagline hero, its supporting sentence, and “Made for your next idea.” Keep “A shorter path from idea to sound” quietly in the existing footer and open with the products. Keep the abstract hero graphic, intro eyebrow/link, and secondary About slogan removed.
 - Add restrained depth through image shadows, fine grids, and small hover responses. Respect reduced-motion preferences.
-- Carry the typography and spacing through product detail, Plugins, Updates, cart, FAQ, and legal pages. The hidden account stub receives only shared-shell updates.
+- Carry the typography and spacing through product detail, Plugins, Updates, cart, FAQ, and legal pages. Cart and account pages now use the shared Moonbase integration; the former account stub is retired.
 
 ## References reviewed
 
@@ -25,7 +25,9 @@ An isolated design pass on `codex/visual-refresh`. The live website has not been
 
 Used for visual hierarchy, product prominence, and restraint rather than copying layouts or adding catalog/review filler.
 
-## Verification
+## Original design-pass verification (historical)
+
+For current accessibility checks and vendor limitations, see [ACCESSIBILITY.md](ACCESSIBILITY.md). The following records checks before the Moonbase migration.
 
 - Inspected the homepage and product pages at desktop and phone sizes.
 - Checked all ten HTML pages at 320px and 768px: no horizontal overflow or broken images.
@@ -38,7 +40,7 @@ Used for visual hierarchy, product prominence, and restraint rather than copying
 
 ## Local preview
 
-From this worktree:
+From the main project folder (or use VS Code Go Live):
 
 ```sh
 python3 -m http.server 8765 --bind 127.0.0.1

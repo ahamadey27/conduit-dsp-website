@@ -1,0 +1,7 @@
+{
+  "liveServer.settings.root": "/",
+  "liveServer.settings.host": "127.0.0.1",
+  "liveServer.settings.port": 8765,
+  "liveServer.settings.useLocalIp": false,
+  "liveServer.settings.ignoreFiles": [".vscode/**", ".git/**", ".worktrees/**"]
+}

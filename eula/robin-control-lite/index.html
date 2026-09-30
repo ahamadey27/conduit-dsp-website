@@ -44,7 +44,8 @@
           <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item nav-item--has-dropdown">
             <a href="/plugins/">Plugins</a>
-            <div class="dropdown-menu">
+            <button class="nav-dropdown-toggle" type="button" aria-label="Show plugin links" aria-expanded="false" aria-controls="plugin-menu"><span aria-hidden="true">▾</span></button>
+            <div id="plugin-menu" class="dropdown-menu">
               <a href="/plugins/robin-control/">Robin Control</a>
               <a href="/plugins/robin-control-lite/">Robin Control Lite</a>
             </div>
@@ -56,13 +57,13 @@
         <div class="cart-widget">
           <a href="/cart/" class="cart-widget__link" data-store-action="view_cart">Cart <span class="cart-count" hidden data-moonbase-if="cart.has_items" data-moonbase-render="cart.item_count">0</span></a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
+        <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- ==================== MAIN CONTENT ==================== -->
-  <main class="main-content" id="main-content">
+  <main class="main-content" id="main-content" tabindex="-1">
     <div class="container page-stub">
       <h1>End User License Agreement &mdash; Robin Control Lite</h1>
       <p class="privacy-updated"><strong>Robin Control Lite</strong> &mdash; Version 2.0.0 &middot; Conduit DSP LLC &middot; Effective date: September 22, 2026</p>
@@ -125,25 +126,26 @@
       <div class="site-footer__inner">
         <div class="footer-brand"><a href="/">conduit.dsp<span aria-hidden="true">↗</span></a><p>A shorter path from idea to sound.</p></div>
         <div class="footer-col">
-          <h4 class="footer-col__heading">Info</h4>
+          <h2 class="footer-col__heading">Info</h2>
           <div class="footer-links">
             <a href="/faq/">FAQ</a>
             <a href="mailto:hello@conduitdsp.com">Contact Us</a>
+            <a href="mailto:hello@conduitdsp.com?subject=Website%20accessibility%20help">Accessibility help</a>
             <a href="/privacy-policy/">Privacy Policy</a>
             <a href="/eula/robin-control-lite/">EULA</a>
           </div>
         </div>
         <div class="footer-col">
-          <h4 class="footer-col__heading">Connect</h4>
+          <h2 class="footer-col__heading">Connect</h2>
           <div class="footer-socials">
             <a href="https://www.instagram.com/conduit.dsp/" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
             <a href="https://www.youtube.com/@conduitdsp" aria-label="YouTube" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
             </a>
             <a href="https://www.tiktok.com/@conduit.dsp" aria-label="TikTok" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
             </a>
           </div>
         </div>
@@ -153,7 +155,7 @@
   </footer>
 
   <!-- ==================== COOKIE CONSENT ==================== -->
-  <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-live="polite" aria-label="Analytics preferences">
+  <div id="cookie-banner" class="cookie-banner hidden" role="region" aria-label="Analytics preferences">
     <p class="cookie-banner__text">We use optional analytics to understand what is useful. The site works either way. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
     <div class="cookie-banner__actions">
       <button id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--secondary" type="button">No thanks</button>

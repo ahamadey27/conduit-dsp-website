@@ -1,5 +1,13 @@
 # Integrations — September 28, 2026
 
+## October 5, 2026 — Robin Control waitlist confirmation removed
+
+At Alex's request, disabled double opt-in on MailerLite form `197334966677275966` (RC Waitlist Hidden Form) and verified the switch remained off after reloading. The selected destination remains **Robin Control Waitlist**, group `183671399741654949`. New accepted signups no longer require a confirmation email. This is a form-specific change; general newsletter and Moonbase signup settings were not changed, and existing subscriber statuses were not edited.
+
+The shared website waitlist script now checks MailerLite's JSON `success` value before showing enrollment success and tells visitors their 50% launch discount will be emailed when Robin Control is ready. All three signup pages use a dated script URL to refresh cached copies. The existing marketing consent text and unsubscribe promise remain. This does not configure or send the launch discount or enable the inactive pre-launch sequence.
+
+## September 28 implementation
+
 Implementation was prepared in `.worktrees/visual-refresh`, branch `codex/visual-refresh`, and authorized for production launch on September 28. Earlier planning is preserved in `MOONBASE_MIGRATION.md`; the facts here supersede its September 19 assumptions.
 
 ## Website wiring

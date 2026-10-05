@@ -42,8 +42,12 @@
       })
         .then(function (response) {
           if (!response.ok) throw new Error('Waitlist signup failed');
+          return response.json();
+        })
+        .then(function (result) {
+          if (result.success !== true) throw new Error('Waitlist signup failed');
           form.reset();
-          setStatus('Almost there—check your email to confirm your spot.', 'success');
+          setStatus('You\u2019re on the waitlist! We\u2019ll email your 50% launch discount when Robin Control is ready.', 'success');
         })
         .catch(function () {
           setStatus('Couldn\u2019t join right now. Please try again.', 'error');

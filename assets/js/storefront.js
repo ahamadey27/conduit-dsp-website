@@ -32,9 +32,9 @@
       const setup = window.Moonbase.setup(tenant, {
         toolbar: { enabled: false },
         auth: { signUp: { marketingConsent: 'OptIn' } },
-        // Moonbase's checkout CSP permits HTTPS and localhost frames, but not
-        // http://127.0.0.1. Use its supported hosted handoff for this preview.
-        checkout: { redirect: location.hostname === '127.0.0.1' ? 'always' : 'auto' },
+        // Use Moonbase's hosted checkout on every device. The desktop overlay
+        // stalled during launch verification; hosted checkout also supports wallets.
+        checkout: { redirect: 'always' },
         cart: { quantity: 'single', leadMagnets: { quantity: 'single' } },
         promotions: { enabled: false },
         theme: {

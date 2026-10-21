@@ -19,7 +19,8 @@ Alex authorized committing, merging and publishing the storefront worktree and c
 - Eleven storefront unit checks pass, including paid product/default variation, owned downloads and hosted fallbacks. All eleven public pages were checked at 320px and 1280px with no horizontal document overflow or broken loaded images; local links/assets/anchors, duplicate IDs, shared script versions and both license footer links pass. Browser checks cover owner download visibility, signed-out RC add-to-cart at $39, and hosted checkout with the expected product/amount and blank customer email. A paid order, new customer license, receipt delivery and fresh plugin activation are not created by this website review.
 - The dashboard enables permanent offline activations, but Robin Control's 1.0.2 client disables that flow. Website copy promises the verified online activation / 90-day grace only. Settings were preserved. Trial newsletter opt-in is currently required in Moonbase; this launch does not introduce or advertise a new trial-signup flow.
 - The historical mixed hosted/embedded-session issue remains a vendor integration limitation until a completed controlled order proves the intended identity. Avoid entering another customer's information into an existing hosted session.
-- Publication uses the root of `main` on GitHub Pages. The active worktree remains the review source; production deployment status must be checked after pushing.
+- Commit `bfa2acb` was merged into `main` and pushed; GitHub Pages reported **built** at 20:47:49 UTC on October 21. Live HTTPS owner downloads show **Version 1.0.2**, and the signed-out RC cart displays $39. The desktop checkout overlay stalled with a blank frame, so the launch follow-up sets `checkout.redirect: 'always'` on all devices using Moonbase's supported hosted checkout. Shared script URLs were refreshed across all eleven pages. Cart/account UI remains embedded. Recheck deployment after this follow-up push.
+- The Coupons list currently contains a free-product coupon; no 50%-off waitlist coupon was present. Preserve the promise and arrange its coupon/campaign separately before contacting those subscribers. No coupon, customer record or campaign was changed by this review.
 
 ## October 21, 2026 — Robin Control video (prepared before launch)
 
@@ -118,6 +119,13 @@ That initial group copy changed MailerLite membership only. The separate Moonbas
 - Embedded mode is selected in Moonbase and the production launch includes the matching storefront widget and `mb_intent` handling. Verify customer email, password-reset and activation callbacks on the deployed HTTPS site before relying on a subscriber campaign.
 - Legacy Lemon Squeezy receipts and the separate sync Worker remain unchanged. Ownership migration for the supplied 180-customer cohort is complete; retiring the Worker and preserving legacy receipt/download access remain separate tasks.
 - The customer-facing Moonbase download page was rechecked September 28 and offered both the Mac 2.0.0 package and Windows 2.0.0 VST3/AAX installer. Public platform claims match those files.
+
+## October 21 review sources
+
+- [Moonbase checkout configuration](https://moonbase.sh/docs/storefronts/embedded/#checkout): supported hosted redirect, return handling, anonymous checkout and wallet behavior.
+- [Moonbase buyer terms](https://help.moonbase.sh/articles/3131239-terms-and-conditions-for-buyers) and [refund operations](https://help.moonbase.sh/articles/0432887-refunds-chargebacks-and-failed-orders): provider license is separate from sale terms; the dashboard processing window is not a blanket legal refund limit.
+- [European Commission digital contract rules](https://commission.europa.eu/topics/business-and-industry/contract-rules/digital-contracts/digital-contract-rules_en) and [UK Consumer Rights Act](https://www.legislation.gov.uk/ukpga/2015/15/body/2025-04-06?view=extent): paid-product wording preserves mandatory consumer rights; counsel review remains appropriate.
+- [Google privacy policy](https://policies.google.com/privacy) and [Moonbase privacy policy](https://moonbase.sh/privacy-policy/), reconciled with the actual activation configuration and existing video embeds.
 
 ## Sources reviewed
 

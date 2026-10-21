@@ -109,11 +109,11 @@ test('owned download uses product without pinning an old release', async () => {
   assert.deepEqual(JSON.parse(JSON.stringify(f.calls.find(c => c[0] === 'download')[1])), { product_id: 'robin-control-lite' });
 });
 
-test('loopback preview uses hosted checkout while HTTPS production keeps automatic checkout', async () => {
+test('preview and HTTPS production both use the verified hosted checkout handoff', async () => {
   const preview = fixture({ hostname: '127.0.0.1' }); await preview.settle();
   assert.equal(preview.calls.find(c => c[0] === 'setup')[2].checkout.redirect, 'always');
   const production = fixture(); await production.settle();
-  assert.equal(production.calls.find(c => c[0] === 'setup')[2].checkout.redirect, 'auto');
+  assert.equal(production.calls.find(c => c[0] === 'setup')[2].checkout.redirect, 'always');
 });
 
 test('Robin Control uses its own product and Moonbase default paid variation', async () => {

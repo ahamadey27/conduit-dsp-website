@@ -24,7 +24,7 @@ Moonbase purchasing, published downloads, and website deployment are separate co
 3. Check **Releases** for the intended active version and correct platform installers. Check the fulfillment message for current customer instructions.
 4. When ready to accept real orders, turn on **Product is purchasable** in **Pricing** and click that section's **Save** button.
 5. Reload the product page and confirm the switch remains on. This enables real purchasing through Moonbase, including direct purchase links, even if the public website has not changed yet.
-6. Refresh the website preview. Click **Buy Robin Control** and confirm the cart contains RC, with the intended price and currency. Check checkout up to the review stage; completing an order is a separate action.
+6. Refresh the website preview. Click **Buy Robin Control** and confirm the cart contains RC, with the intended price and currency. Checkout uses `redirect: 'always'` on all devices after the October 21 desktop-overlay stall. Verify the hosted page shows the correct product, amount and intended customer identity; completing an order is a separate action.
 7. Publish the prepared website changes: review and commit the worktree changes, merge `codex/robin-control-storefront` into `main`, and push `main` to GitHub. GitHub Pages serves the root of `main`; confirm its deployment completes.
 8. On the live website, verify the purchase button, cart, checkout handoff, and account/download entry points. For an authorized completed test order, verify the intended customer receives ownership and can access the correct installers. Check for conflicting embedded and hosted customer sessions as described in [integrations.md](integrations.md).
 

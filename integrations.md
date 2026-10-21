@@ -1,5 +1,13 @@
 # Integrations — current launch record
 
+## October 21, 2026 — Product-card purchase buttons
+
+At Alex's request, added **Buy now — $39** to the right of **Explore Robin Control** on Home and Plugins. Both use the shared Moonbase cart handler with product `robin-control`, a dynamic price binding with a $39 fallback, and an owned-product Download alternative. A responsive two-column action row keeps the purchase control to the right on desktop, tablet and phone widths, with the Explore text wrapping when space is tight.
+
+Verified both action rows at 1280px, 768px, 390px and 320px: purchase controls remain to the right with no horizontal overflow. Both new buttons open the RC cart at $39.
+
+The preceding hosted-checkout fix (`f437df1`) deployed successfully at 20:52:23 UTC. Live RC cart → hosted checkout was verified at $39, without submitting payment; the test cart was cleared.
+
 ## October 21, 2026 — Robin Control commercial launch
 
 Alex authorized committing, merging and publishing the storefront worktree and confirmed enabling purchasing. Dashboard review confirmed the active $39 USD Standard one-off/perpetual offer, no product discounts, five device activations, and published Mac/Windows installers. Alex believes the separate commercial rights and installer/activation release checks are complete; this website review does not independently close the plugin repository's compliance register.

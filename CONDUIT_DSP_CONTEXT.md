@@ -8,6 +8,12 @@
 
 This file is a decision aid, not a substitute for inspecting the current repository or live service before making a change. It deliberately excludes passwords, API keys, signing credentials, and other secrets.
 
+## October 21, 2026 — Robin Control website launch authorization
+
+Alex authorized committing, merging and publishing `.worktrees/robin-control-storefront` into production `main` and confirmed enabling Moonbase purchasing. Current live dashboard: $39 USD one-time perpetual offer, no storewide discount, five activated devices, active 1.0.2 Mac/Windows installers. Robin Control requires macOS 13+ (universal VST3/AU/AAX) or 64-bit Windows 10/11 (VST3/AAX); Lite retains its separate macOS 11+ requirement. The website now includes the supplied Robin Control walkthrough video, paid purchase/download controls, separate paid EULA, and a 14-day full-refund policy selected at Alex's direction. RC signup waitlists are removed; the existing 50%-off subscriber promise remains. No campaign is authorized by publication alone.
+
+The client has 90-day online-validation grace and disables permanent offline activation; the dashboard's offline switch is enabled, so do not promise a working permanent offline flow. Alex believes the commercial rights and final activation/installer checks are complete; this does not independently resolve the plugin repository's stale compliance register. See active [AGENTS.md](AGENTS.md), [integrations.md](integrations.md) and [Moonbase procedures](MOONBASE_COMMON_WORKFLOW.md) for current evidence, limitations and publication verification. Older Coming Soon, version, price and launch-gate snapshots below are superseded where they conflict.
+
 ## September 30, 2026 — canonical website checkout
 
 Alex approved publishing the accessibility fixes and reconciling the local project with the live redesign. The canonical working directory is now `/Users/alex/Documents/Github/conduit-dsp-website` on `main`; GitHub Pages deploys its root. The retained `.worktrees/visual-refresh` checkout is historical and contains unrelated palette artifacts. Do not follow older instructions to work there by default. VS Code Go Live uses the project root at `http://127.0.0.1:8765/`, already allowed by Moonbase. See [ACCESSIBILITY.md](ACCESSIBILITY.md) for checks and outstanding vendor issues.

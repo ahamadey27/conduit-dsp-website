@@ -115,3 +115,32 @@ test('loopback preview uses hosted checkout while HTTPS production keeps automat
   const production = fixture(); await production.settle();
   assert.equal(production.calls.find(c => c[0] === 'setup')[2].checkout.redirect, 'auto');
 });
+
+test('Robin Control uses its own product and Moonbase default paid variation', async () => {
+  const f = fixture();
+  const el = f.control('add_to_cart');
+  el.dataset.storeProduct = 'robin-control';
+  await f.click(el);
+  assert.deepEqual(JSON.parse(JSON.stringify(f.calls.find(c => c[0] === 'add')[1])), {
+    product_id: 'robin-control', quantity: 1, show_cart: true
+  });
+});
+
+test('Robin Control ownership routes downloads to Robin Control', async () => {
+  const f = fixture();
+  const el = f.control('download_product');
+  el.dataset.storeProduct = 'robin-control';
+  await f.click(el);
+  assert.deepEqual(JSON.parse(JSON.stringify(f.calls.find(c => c[0] === 'download')[1])), { product_id: 'robin-control' });
+});
+
+test('Robin Control failures retain the matching hosted buy or download link', async () => {
+  for (const [action, path] of [['add_to_cart', 'buy'], ['download_product', 'download']]) {
+    const f = fixture({ scriptFailure: true });
+    const el = f.control(action);
+    el.dataset.storeProduct = 'robin-control';
+    await f.click(el);
+    assert.equal(f.body.children[0].children.find(c => c.tagName === 'a').href,
+      `https://conduitdsp.moonbase.sh/${path}/robin-control`);
+  }
+});

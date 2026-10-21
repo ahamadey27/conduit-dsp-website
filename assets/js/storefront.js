@@ -85,6 +85,7 @@
     const control = event.target.closest('[data-store-action]');
     if (!control || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const action = control.dataset.storeAction;
+    const product = control.dataset.storeProduct || lite;
     if (!actions.has(action)) return;
     event.preventDefault();
     if (control.getAttribute('aria-busy') === 'true') return;
@@ -97,9 +98,12 @@
     try {
       const store = await loadStore();
       if (action === 'add_to_cart') {
-        await bounded(store.add_to_cart({ product_id: lite, variation_id: 'free', quantity: 1, show_cart: true }), 15000);
+        const purchase = { product_id: product, quantity: 1, show_cart: true };
+        // Lite has a fixed free variation; paid products use Moonbase's default offer.
+        if (product === lite) purchase.variation_id = 'free';
+        await bounded(store.add_to_cart(purchase), 15000);
       } else if (action === 'download_product') {
-        store.download_product({ product_id: lite });
+        store.download_product({ product_id: product });
       } else {
         store[action]();
       }
@@ -107,7 +111,7 @@
     } catch (_) {
       const productAction = action === 'add_to_cart' || action === 'download_product';
       showNotice('The store could not open here.', {
-        href: action === 'add_to_cart' ? tenant + '/buy/' + lite : action === 'download_product' ? tenant + '/download/' + lite : tenant,
+        href: action === 'add_to_cart' ? tenant + '/buy/' + product : action === 'download_product' ? tenant + '/download/' + product : tenant,
         label: productAction ? 'Continue on Moonbase' : 'Open the customer portal'
       });
     } finally {

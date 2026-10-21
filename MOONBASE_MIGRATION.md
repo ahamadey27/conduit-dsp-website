@@ -1,6 +1,8 @@
 # Moonbase storefront migration
 
-**Current status: September 28, 2026.** Work was prepared in `.worktrees/visual-refresh` on `codex/visual-refresh`. The website integration and supplied customer/license migration are complete, both platform installers are available, and Alex authorized production deployment. [integrations.md](integrations.md) is the detailed implementation and migration record.
+**October 21, 2026 launch update:** Alex authorized merging/publishing the Robin Control storefront and confirmed enabling sales. The current offer is $39 USD perpetual; active 1.0.2 installers support macOS 13+ and Windows 10/11. Paid-product controls, license/refund terms and current activation disclosures are prepared. See [integrations.md](integrations.md) for verification and limits; the older Coming Soon/hidden-price requirements below are historical.
+
+**September 28, 2026 migration snapshot.** Work was prepared in `.worktrees/visual-refresh` on `codex/visual-refresh`. The website integration and supplied customer/license migration are complete, both platform installers are available, and Alex authorized production deployment. [integrations.md](integrations.md) is the detailed implementation and migration record.
 
 ## Completed work
 

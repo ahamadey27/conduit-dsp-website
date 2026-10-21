@@ -1,4 +1,42 @@
-# Integrations — September 28, 2026
+# Integrations — current launch record
+
+## October 21, 2026 — Robin Control commercial launch
+
+Alex authorized committing, merging and publishing the storefront worktree and confirmed enabling purchasing. Dashboard review confirmed the active $39 USD Standard one-off/perpetual offer, no product discounts, five device activations, and published Mac/Windows installers. Alex believes the separate commercial rights and installer/activation release checks are complete; this website review does not independently close the plugin repository's compliance register.
+
+### Launch corrections
+
+- Corrected the product page from 1.0.0 / macOS 11+ to **1.0.2 / macOS 13+**, matching the published Mac artifact and release evidence. Windows remains 64-bit Windows 10/11, VST3/AAX; Mac is universal VST3/AU/AAX.
+- Downloaded both existing published installers. The Mac package matches the local signed/notarized 1.0.2 package, SHA-256 `ccd6f08440d0d14fdc302dd935bc268224d22d1dc87a53cae591b1e283b5b3de`; `pkgutil --check-signature` confirms Apple trust and notarization.
+- The previous Moonbase release record was labeled 1.0.0 while containing the two 1.0.2 files. Published an accurate **1.0.2** release using those same downloaded files and verified it became Active. Kept the historical release. No plugin was rebuilt or installed.
+- Added Moonbase's product website URL and fulfillment instructions with current installers, activation, support, license and refund links. Updated release description. Purchasing was already enabled by Alex and was not toggled by the agent.
+- Added `/eula/robin-control/` with a separate paid-product license and a **14-day full-refund policy**, including after download/activation, at Alex's direction to choose a standard policy. Added links beside the purchase button, in the FAQ, and across all eleven footers. Statutory rights remain; Moonbase's purchase terms are separate. This operational legal copy warrants counsel review; no legal certification is claimed.
+- Updated privacy disclosures to include Robin Control activation and the existing YouTube embeds. GA4 opt-in behavior and MailerLite newsletter wiring are preserved. Added actual public-launch notes to Updates and removed its commented dummy RC changelog.
+- Removed RC signup waitlists as previously approved, retaining the homepage newsletter and existing subscribers' promised 50%-off benefit. Coupon distribution and a subscriber campaign are separate work; none was sent.
+
+### Verification and limits
+
+- Eleven storefront unit checks pass, including paid product/default variation, owned downloads and hosted fallbacks. All eleven public pages were checked at 320px and 1280px with no horizontal document overflow or broken loaded images; local links/assets/anchors, duplicate IDs, shared script versions and both license footer links pass. Browser checks cover owner download visibility, signed-out RC add-to-cart at $39, and hosted checkout with the expected product/amount and blank customer email. A paid order, new customer license, receipt delivery and fresh plugin activation are not created by this website review.
+- The dashboard enables permanent offline activations, but Robin Control's 1.0.2 client disables that flow. Website copy promises the verified online activation / 90-day grace only. Settings were preserved. Trial newsletter opt-in is currently required in Moonbase; this launch does not introduce or advertise a new trial-signup flow.
+- The historical mixed hosted/embedded-session issue remains a vendor integration limitation until a completed controlled order proves the intended identity. Avoid entering another customer's information into an existing hosted session.
+- Publication uses the root of `main` on GitHub Pages. The active worktree remains the review source; production deployment status must be checked after pushing.
+
+## October 21, 2026 — Robin Control video (prepared before launch)
+
+- Replaced the temporary Lite demo on the Robin Control product page with Alex's supplied YouTube video (`qoAb74B5HMc`), titled “Robin Control — Main Features Walkthrough,” in the existing responsive player.
+- This is a local preview update; Moonbase purchasing settings and production deployment were not changed.
+
+## October 5, 2026 — Robin Control storefront preparation (local worktree)
+
+Historical October 5 preparation at Alex's request in `.worktrees/robin-control-storefront`, branch `codex/robin-control-storefront`. The October 21 launch record above supersedes its purchasing-off, version and platform snapshots.
+
+- Removed the Robin Control 50%-off waitlist boxes from Home, Plugins, and the RC detail page. Kept the homepage **Stay in the loop** newsletter, its form, consent copy, and MailerLite integration. Existing waitlist subscribers and their promised benefit are unchanged; no email or vendor configuration was changed.
+- RC uses Lite's purchase layout, with version 1.0.0 next to the price. The temporary Lite video used on October 5 was replaced with Alex's Robin Control video on October 21 (see above).
+- Robin Control uses the Standard perpetual offer at $39 USD. Alex confirmed removing the storewide discount and requested the website use $39. The page binds its price using Moonbase's [dynamic content attributes](https://moonbase.sh/docs/storefronts/embedded/#render-dynamic-content), with `$39 USD` as the initial/failure price and no crossed-out comparison price. Recheck this fallback when changing the offer.
+- Active Moonbase release 1.0.0 contains Mac and Windows installers. At Alex's explicit direction, the RC page lists: Version 1.0.0 · macOS 11+ (Apple Silicon / Intel): VST3 / AU / AAX · Windows 10 / 11 (64-bit): VST3 / AAX.
+- The shared click handler accepts `data-store-product="robin-control"` for purchase/download actions and hosted fallbacks. RC uses Moonbase's default offer; Lite keeps its explicit `free` variation. All ten pages use the refreshed shared script URL.
+- **Purchasing is still disabled in Moonbase.** The preview initializes successfully, but RC add-to-cart is rejected and the correct hosted RC fallback appears. No paid checkout was completed. Enable purchasing as part of the separate launch, then verify live price/discount rendering, RC cart/checkout, and owned downloads before publishing. RC ownership switching is covered by code tests, not a completed live purchase.
+- Verification: 11 storefront tests pass; desktop/mobile Home, Plugins and RC layouts checked, no horizontal overflow observed; mobile navigation closes before opening the working Moonbase account panel; existing Lite ownership/download controls remain present. `git diff --check` passes.
 
 ## October 5, 2026 — Robin Control waitlist confirmation removed
 
@@ -10,7 +48,7 @@ The shared website waitlist script now checks MailerLite's JSON `success` value 
 
 Implementation was prepared in `.worktrees/visual-refresh`, branch `codex/visual-refresh`, and authorized for production launch on September 28. Earlier planning is preserved in `MOONBASE_MIGRATION.md`; the facts here supersede its September 19 assumptions.
 
-## Website wiring
+## Website wiring — September 28 snapshot (October 21 launch changes above supersede RC status)
 
 - All ten HTML pages load `assets/js/storefront.js` and `assets/css/storefront.css`.
 - Moonbase tenant: `https://conduitdsp.moonbase.sh`; product: `robin-control-lite`; variation: `free`.

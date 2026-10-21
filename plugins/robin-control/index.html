@@ -29,7 +29,6 @@
   <link rel="stylesheet" href="/assets/css/storefront.css?v=20260922-1">
   <link rel="stylesheet" href="/assets/css/cookie-banner.css">
   <link rel="stylesheet" href="/assets/css/pages/plugin-detail.css?v=20261005-rc3">
-  <link rel="stylesheet" href="/assets/css/waitlist.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -69,7 +68,7 @@
     <div class="plugin-detail">
       <a class="back-link" href="/plugins/">← All plugins</a>
       <div class="plugin-detail__header">
-        <p class="eyebrow">In development / Coming soon</p>
+        <p class="eyebrow">Round-robin sampler</p>
         <h1 class="plugin-detail__name">Robin Control</h1>
         <p class="plugin-detail__tagline">More samples. More variation. More control.</p>
       </div>
@@ -83,32 +82,29 @@
         >
       </div>
 
-      <!-- ========== Pre-Launch Waitlist ========== -->
-      <div class="waitlist-signup waitlist-signup--detail">
-        <p class="waitlist-signup__lead">A little more control is on the way.</p>
-        <p class="waitlist-signup__benefit">Join the waitlist and get 50% off at launch.</p>
-        <form class="waitlist-form" data-waitlist-form>
-          <label class="waitlist-form__label" for="robin-control-waitlist-email">Email address (required)</label>
-                  <div class="waitlist-form__controls">
-            <input id="robin-control-waitlist-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" aria-describedby="waitlist-consent" required>
-            <button type="submit" class="btn btn--waitlist">Notify me</button>
-          </div>
-          <p id="waitlist-consent" class="waitlist-form__consent">By subscribing, you agree to receive Robin Control launch and promotional emails. Unsubscribe anytime. <a href="/privacy-policy/">Privacy Policy</a>.</p>
-          <p class="waitlist-form__status" data-waitlist-status role="status" aria-live="polite" aria-atomic="true"></p>
-        </form>
+      <!-- ========== Price, Version and Moonbase Storefront ========== -->
+      <div class="plugin-detail__purchase">
+        <div class="plugin-detail__price">
+          <span data-moonbase-render="product.robin-control.price">$39 USD</span>
+        </div>
+        <p class="plugin-detail__compatibility">Version 1.0.2 · macOS 13+ (Apple Silicon / Intel): VST3 / AU / AAX · Windows 10 / 11 (64-bit): VST3 / AAX</p>
+        <a class="btn btn--primary" href="https://conduitdsp.moonbase.sh/buy/robin-control" data-store-action="add_to_cart" data-store-product="robin-control" data-moonbase-if="!product.robin-control.owned">Buy Robin Control</a>
+        <a class="btn btn--outline" href="https://conduitdsp.moonbase.sh/download/robin-control" data-store-action="download_product" data-store-product="robin-control" hidden data-moonbase-if="product.robin-control.owned">Download Robin Control</a>
+        <p class="legal-notice">One-time purchase · 5 activated devices · <a href="/eula/robin-control/">License terms</a> · <a href="/eula/robin-control/#refunds">14-day refunds</a></p>
       </div>
 
-      <!-- ========== Plugin Name and Tagline ========== -->
-
-
-      <!-- ========== YouTube Video Embed (uncomment when video ID is available) ========== -->
-      <!-- <div class="plugin-detail__video">
+      <!-- ========== Robin Control Video ========== -->
+      <div class="plugin-detail__video">
         <iframe
-          src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID"
-          title="Robin Control Demo"
+          src="https://www.youtube.com/embed/qoAb74B5HMc?si=lXGUkTCYvis4svHG"
+          title="Robin Control — Main Features Walkthrough"
+          width="560"
+          height="315"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
-      </div> -->
+      </div>
 
       <!-- ========== Description Text ========== -->
       <div class="plugin-detail__description">
@@ -150,7 +146,8 @@
             <a href="mailto:hello@conduitdsp.com">Contact Us</a>
             <a href="mailto:hello@conduitdsp.com?subject=Website%20accessibility%20help">Accessibility help</a>
             <a href="/privacy-policy/">Privacy Policy</a>
-            <a href="/eula/robin-control-lite/">EULA</a>
+            <a href="/eula/robin-control/">Robin Control EULA</a>
+            <a href="/eula/robin-control-lite/">Lite EULA</a>
           </div>
         </div>
         <div class="footer-col">
@@ -182,9 +179,8 @@
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="/assets/js/storefront.js?v=20260922-3"></script>
+  <script src="/assets/js/storefront.js?v=20261021-rc1"></script>
   <script src="/assets/js/nav.js"></script>
-  <script src="/assets/js/waitlist.js?v=20261005"></script>
   <script src="/assets/js/cookie-banner.js"></script>
 </body>
 </html>

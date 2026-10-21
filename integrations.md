@@ -2,9 +2,9 @@
 
 ## October 21, 2026 — Product-card purchase buttons
 
-At Alex's request, added **Buy now — $39** to the right of **Explore Robin Control** on Home and Plugins. Both use the shared Moonbase cart handler with product `robin-control`, a dynamic price binding with a $39 fallback, and an owned-product Download alternative. A responsive two-column action row keeps the purchase control to the right on desktop, tablet and phone widths, with the Explore text wrapping when space is tight.
+Added **Buy now — $39** to the Robin Control cards on Home and Plugins. Alex then supplied the Lite card as the placement reference: **Buy now** (or owned-product **Download**) comes first on the left, followed by **Explore Robin Control** and its arrow. Both products use the same action-row class, spacing, button padding and responsive wrapping; the temporary RC-specific grid styles were removed.
 
-Verified both action rows at 1280px, 768px, 390px and 320px: purchase controls remain to the right with no horizontal overflow. Both new buttons open the RC cart at $39.
+Both buttons use the shared Moonbase cart handler with product `robin-control`, a dynamic price binding with a $39 fallback, and an owned-product Download alternative. Cart routing was verified at $39.
 
 The preceding hosted-checkout fix (`f437df1`) deployed successfully at 20:52:23 UTC. Live RC cart → hosted checkout was verified at $39, without submitting payment; the test cart was cleared.
 

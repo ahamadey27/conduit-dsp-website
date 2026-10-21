@@ -20,9 +20,6 @@
 .plugin-card__meta { margin: 18px 0 22px; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
 .plugin-card__actions { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
 .plugin-card__actions .btn { width: auto; }
-.plugin-card__actions--control { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; }
-.plugin-card__actions--control .text-link { gap: 10px; }
-.plugin-card__actions--control .btn { padding-inline: 16px; white-space: nowrap; }
 .product-explore { margin-top: 18px; }
 .plugin-card .waitlist-signup { border-top: 1px solid var(--border); padding-top: 18px; margin-top: 22px; }
 .home-about { margin-top: 78px; padding: 62px 0; border-top: 1px solid var(--border); }

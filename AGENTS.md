@@ -30,7 +30,7 @@ Conduit DSP's live static website and store:
 - Google Fonts are the only CSS dependency
 - Moonbase embedded storefront handles cart, accounts, checkout and downloads; the visual refresh and storefront were authorized for production launch on September 28, 2026
 - September 22, 2026: embedded widget implemented in the redesign worktree for tenant `https://conduitdsp.moonbase.sh`
-- November 14: website newsletter signups submit directly to Moonbase group `conduit-dsp-newsletter`; Alex authorized publishing the change. MailerLite retains historical lists/native sync. See `integrations.md` for deployment evidence.
+- November 14: website newsletter signups submit directly to Moonbase group `conduit-dsp-newsletter`; the change is published and live readiness is verified. MailerLite retains historical lists/native sync. See `integrations.md` for deployment evidence.
 - A separate Cloudflare Worker is documented as syncing Lemon Squeezy orders to MailerLite; its deployment was last verified July 25
 - September 22 customer migration is complete: 180 imported customers own RCL after 179 new perpetual licenses were imported and one existing owner was skipped; Moonbase shows 181 customers/owners including the other existing test account
 - Alex confirmed the migrated data is syncing to MailerLite. Preserve the native integration and original subscriber group; do not repeat the successful license import

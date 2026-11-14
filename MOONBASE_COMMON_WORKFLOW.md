@@ -47,7 +47,7 @@ Reviewed November 14, 2026 using [Moonbase account-name instructions](https://he
 
 ## Maintain the website newsletter signup
 
-Implemented and browser-tested November 14, 2026 in the storefront worktree; Alex authorized publication the same day. Deployment evidence is in `integrations.md`. This supersedes the earlier proposal below for the website form only.
+Implemented, browser-tested and published November 14, 2026 with Alex's authorization. GitHub Pages built the runtime deployment at 20:17:38 UTC; the live homepage and enabled Subscribe button were verified. Deployment evidence is in `integrations.md`. This supersedes the earlier proposal below for the website form only.
 
 1. In **Customers → Conduit DSP Newsletter**, verify **Open to sign-ups** and the full **Group ID → conduit-dsp-newsletter**. Read the ID itself; a partial text selection omitted the initial `c` during this setup. Do not remove customer accounts or alter marketing consent merely to clear list membership.
 2. The homepage form uses `data-moonbase-form="subscribe"`, `data-moonbase-feedback="inline"`, an email input, and hidden `groups=conduit-dsp-newsletter`. Its inline message element remains inside the form. The storefront owns submission and confirmation; `newsletter.js` only gates availability until shared storefront setup completes and displays a load-failure message. Keep the static submit button disabled and `method="post"` so a failed SDK cannot place an address in the page URL.

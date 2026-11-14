@@ -1,30 +1,30 @@
 (function () {
+  'use strict';
   var form = document.getElementById('newsletter-form');
   if (!form) return;
   var status = document.getElementById('newsletter-status');
-  var button = form.querySelector('button');
-  var input = form.querySelector('input[type="email"]');
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    if (!form.reportValidity() || button.disabled) return;
-    button.disabled = true;
-    status.className = '';
-    status.textContent = 'Subscribing…';
-    fetch('https://assets.mailerlite.com/jsonp/2241125/forms/184331636279609031/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: 'fields[email]=' + encodeURIComponent(input.value.trim())
-    })
-      .then(function (response) {
-        if (!response.ok) throw new Error('Subscribe failed');
-        form.reset();
-        status.className = 'newsletter-success';
-        status.textContent = 'Thanks for subscribing!';
-      })
-      .catch(function () {
-        status.className = 'newsletter-error';
-        status.textContent = 'Could not subscribe right now. Please try again.';
-      })
-      .finally(function () { button.disabled = false; });
+  var button = form.querySelector('button[type="submit"]');
+  var root = document.documentElement;
+
+  // Moonbase owns submission, group membership, confirmation and inline feedback.
+  // Keep the form disabled until the shared storefront is ready, including when
+  // JavaScript or the CDN fails, so email addresses cannot enter a page URL.
+  function updateAvailability() {
+    var state = root.dataset.storefront;
+    if (state === 'ready') {
+      button.disabled = false;
+      status.textContent = '';
+      observer.disconnect();
+    } else if (state === 'unavailable') {
+      form.dataset.moonbaseState = 'error';
+      status.textContent = 'Newsletter signup is unavailable right now. Please reload to try again.';
+      observer.disconnect();
+    }
+  }
+  var observer = new MutationObserver(updateAvailability);
+  observer.observe(root, {
+    attributes: true,
+    attributeFilter: ['data-storefront']
   });
+  updateAvailability();
 })();

@@ -1,5 +1,7 @@
 # Moonbase storefront migration
 
+**November 15, 2026 email update:** Homepage newsletter signup now submits to Moonbase, published November 14. Alex subsequently required newsletter agreement for the free Lite offer, with unsubscribe afterward; the dashboard setting was saved and verified after reload. Website disclosures and privacy policy reflect that scope. Paid purchases remain optional and existing preferences were not bulk changed. This supersedes older optional-free-offer and direct-MailerLite-form instructions below. See [integrations.md](integrations.md) and [the free-offer procedure](MOONBASE_COMMON_WORKFLOW.md#require-newsletter-signup-on-a-free-offer), including the unresolved UK/EU consent review and end-to-end testing limit.
+
 **October 21, 2026 launch update:** Alex authorized merging/publishing the Robin Control storefront and confirmed enabling sales. The current offer is $39 USD perpetual; active 1.0.2 installers support macOS 13+ and Windows 10/11. Paid-product controls, license/refund terms and current activation disclosures are prepared. See [integrations.md](integrations.md) for verification and limits; the older Coming Soon/hidden-price requirements below are historical.
 
 **September 28, 2026 migration snapshot.** Work was prepared in `.worktrees/visual-refresh` on `codex/visual-refresh`. The website integration and supplied customer/license migration are complete, both platform installers are available, and Alex authorized production deployment. [integrations.md](integrations.md) is the detailed implementation and migration record.
@@ -28,7 +30,7 @@ The [179-license import report](https://app.moonbase.sh/import/09726439-30d8-410
 4. Verify checkout, return URLs and emailed intents on deployed `https://conduitdsp.com` across desktop/mobile.
 5. Preserve legacy receipts/download access and inspect the old Lemon Squeezy-to-MailerLite Worker before retiring it. Ownership migration for the supplied cohort is already complete.
 
-Alex's MailerLite confirmation resolves the basic migration-sync check. It does not establish exact current group counts or independently test every name-overwrite, unsubscribe, bounce or conflicting-preference case. Blank import preferences do not revoke existing opt-in. Keep new customer marketing opt-in optional and direct newsletter/RC waitlist forms intact.
+Alex's MailerLite confirmation resolved the basic migration-sync check. It did not establish exact current group counts or independently test every name-overwrite, unsubscribe, bounce or conflicting-preference case. Blank import preferences do not revoke existing opt-in. The optional-signup/direct-form direction in this September snapshot is superseded by the dated updates above.
 
 Robin Control remains Coming Soon with no public price or release date. Its licensing implementation/policy, paid offer, merchant readiness and waitlist-discount delivery require their own current evidence; do not infer them from the completed Lite migration. No sibling product repository was changed by this website work.
 

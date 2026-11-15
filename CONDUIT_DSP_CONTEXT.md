@@ -2,11 +2,15 @@
 
 **Base snapshot date:** July 25, 2026
 
-**Latest website/commerce update:** September 28, 2026, including completed customer/license migration, Mac and Windows 2.0.0 downloads, and production website launch authorization. Sibling product and service status below remains dated unless explicitly updated.
+**Latest website/commerce update:** November 15, 2026. Current email/signup changes are summarized below; sibling product and service status remains dated unless explicitly updated.
 
 **Purpose:** Durable company-level context for Codex work across the Conduit DSP website, products, marketing, commerce, licensing, and operations.
 
 This file is a decision aid, not a substitute for inspecting the current repository or live service before making a change. It deliberately excludes passwords, API keys, signing credentials, and other secrets.
+
+## November 15, 2026 — Newsletter signup and free registration
+
+The homepage newsletter now submits directly to Moonbase group `conduit-dsp-newsletter` (published November 14). MailerLite retains historical records and its native sync. At Alex's explicit direction, Lite's free offer now requires newsletter agreement; saved and reloaded the product's **Require newsletter opt-in on free purchases** switch. Fresh hosted checkout discloses agreement to email product updates and offers. Website notices and the privacy policy explain the requirement and unsubscribe without cancellation of an existing license. Ordinary paid purchases and general embedded account signup retain an optional choice. Existing preferences were not bulk changed; the UK/EU consent concern was explained and remains a counsel-review item. This supersedes older optional-free-registration statements below. See [integrations.md](integrations.md) and [the operating guide](MOONBASE_COMMON_WORKFLOW.md#require-newsletter-signup-on-a-free-offer) for evidence and testing limits.
 
 ## October 21, 2026 — Robin Control website launch authorization
 

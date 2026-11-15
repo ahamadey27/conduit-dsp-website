@@ -1,8 +1,40 @@
-# Regional customer email preferences
+# Customer email preferences — Moonbase default-on assessment
 
-Prepared November 15, 2026 following Alex's direction to prefer automatic subscription, then a checked-by-default choice, then an unchecked choice, as permitted for each customer. This is a proposal; regional enrollment is **not implemented**.
+**Current implementation, November 15, 2026:** After the conditional research below, Alex explicitly authorized proceeding with the native prechecked model and preferred omitting the extended explanatory sentence. Saved **Opt-in (checked by default)** in Moonbase's global Features settings and verified it after reload. Fresh signed-out Lite checkout starts checked and permits unchecking; Complete remains present. Used the native short label **Keep me up to date with product updates and offers**. No order was submitted or customer preference edited. Lite's compulsory gate stays off, the website's standalone embedded account signup remains OptIn, and geographic handling remains on hold. This implementation is not a determination of worldwide legal compliance; the research limitations and counsel-review item remain.
 
-## Verified current setup
+## Specific model assessed
+
+**Candidate:** new customers complete a Lite or paid-product checkout with a clearly visible, prechecked marketing box; they may uncheck it and still obtain the product. Marketing based on an existing-customer exception is limited to the sender's own similar products, starting with the Lite-to-Robin-Control upgrade offer. Unsubscribe remains available, prior refusals survive repeat orders, and no historical non-subscriber is bulk enrolled.
+
+Research conclusion: **a credible conditional route toward default-on product marketing exists; a worldwide global switch is not cleared by this research.** A prechecked box does not establish affirmative consent. It may provide refusal at collection when a separate exception permits marketing without consent. Moonbase already renders the candidate control, so a new feature named "soft opt-in" is not inherently necessary. Its ability to render a checkbox and the legal eligibility of the recipients are separate questions.
+
+| Part of the model | Evidence and assessment |
+| --- | --- |
+| Paid-product customer | The [UK statutory exception](https://www.legislation.gov.uk/uksi/2003/2426/regulation/22/data.html) covers qualifying sales/negotiations with refusal at collection and in messages. Scope remains the sender's own similar products. |
+| EU free Lite → paid Robin Control | [Inteligo Media, C-654/23, paragraphs 53–63](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62023CJ0654) permits a free service in the commercial model examined, supported by indirect remuneration. Actual fit to software and funding has not been adjudicated or financially verified here. |
+| Current regulator interpretation | [CNIL's June 10, 2026 guidance](https://www.cnil.fr/fr/communication-electronique-quelles-regles) expressly applies the free-account acquisition example, and distinguishes a bare account with no purchase/service. This strengthens the freemium analogy; it does not approve every account or free download. |
+| UK permanently free Lite | [ICO guidance](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-direct-marketing-using-electronic-mail/how-do-we-comply-with-the-pecr-electronic-mail-marketing-rules/) expressly includes free trials as possible negotiations; it does not expressly settle this permanently free license. The post-2020 CJEU decision is not binding UK precedent: [EU Withdrawal Act, section 6](https://www.legislation.gov.uk/ukpga/2018/16/section/6/data.html). |
+| Same sender / collection | [Moonbase's published buyer policy](https://help.moonbase.sh/articles/2002025-privacy-policy-for-buyers) distinguishes its seller role from processing merchant accounts/licenses/email on the merchant's behalf. This supports further assessment of first-party collection through a processor; it does not itself determine Conduit DSP's statutory eligibility. |
+| General account signup | Current website has a separate Create account path. Moonbase's account mode also affects signups, so checking the box by default globally reaches beyond completed product acquisitions. A bare account needs its own permission route; ownership alone is not proof of collection wording or permission. |
+| Other jurisdictions | [CASL section 10(9)–(10)](https://laws-lois.justice.gc.ca/eng/acts/E-1.6/section-10.html) provides implied-consent business-relationship routes, including certain written contracts. Lite's EULA acceptance occurs on installation/use, which has not been verified for every registrant. [ACMA](https://www.acma.gov.au/telemarketing-and-e-marketing-common-issues-and-mistakes) warns against assuming inferred permission from a one-off purchase. Neither country is automatically cleared or automatically excluded solely by checkbox design. |
+
+For the UK, prepare a legitimate interests assessment under [current ICO guidance](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-direct-marketing-using-electronic-mail/what-else-do-we-need-to-consider/). The commercial purpose is promoting the closely related paid sampler; assess necessity and reasonable expectations against intrusion, with clear notice, limited frequency and easy refusal. This draft purpose does not prove PECR eligibility. For the specific EU communication within Article 13(2), Inteligo paragraphs 64–69 hold that a further Article 6(1) basis assessment is not required for that processing; this does not remove all GDPR duties or approve unrelated profiling.
+
+## Candidate native setup and remaining checks
+
+1. **Opt-in (checked by default)** is now enabled in Moonbase's global menu and reload-verified; keep the compulsory free-offer switch **off**. The no-box automatic mode lacks the initial refusal required by the UK/EU exception and was not selected. The live save followed Alex's explicit direction after the conditional review; it does not establish legal eligibility for every recipient.
+2. Retained the native hosted label **Keep me up to date with product updates and offers**. Alex declined the proposed longer explanation. No hosted label customization was performed. Website notices now use brief plugin-news/offers wording; the privacy policy explains the preselected checkout option, ability to change the choice before completion, relevant-marketing basis and unsubscribe rights.
+3. Restrict exception-based audiences to documented qualifying acquisitions/relationships. The existing completed-Lite-order trigger and Newsletter-Yes check are useful controls for the day-seven offer. A broad All customers newsletter is not interchangeable with this model. Generic signups, imports, bare ownership and unrelated future products need their own eligibility evidence. Preserve separately established affirmative newsletter subscriptions.
+4. Keep evidence of the collection wording/version, date, acquisition and permission basis. A saved Newsletter-Yes flag is a routing preference, not standalone evidence that someone affirmatively consented. An absent dedicated legal-basis field is not by itself a legal ban; records may be maintained separately with appropriate privacy handling.
+5. Confirm with Moonbase whether its general EU/UK warning permits a merchant to use the checked-by-default mode under a separately established customer exception, and verify that an unchecked box persists and an existing unsubscribe is not reset by a new order. Current documentation warns against EU/UK use and does not resolve that specific exception. No support message has been sent.
+6. Obtain targeted legal review of the actual Lite freemium model, UK free-license eligibility, relevant international relationship exceptions and the collection arrangement. The strongest narrow question is whether completed Lite registrants can receive closely related Robin Control offers under the exception with this checkout design. This is recommended legal review, not a claim that research has established a compulsory approval workflow.
+7. Initial UI verification is complete: saved mode persists; fresh Lite starts checked; clicking the box makes it unchecked with Complete still present. No order was submitted, so successful fulfillment after refusal, saved preference persistence, repeat purchase after unsubscribe and later suppression remain untested. Paid checkout's initial billing step was inspected without submitting contact/payment details; its later marketing choice was not independently reached. Keep campaign types and subscription gates. No marketing email was sent by this configuration change.
+
+## Archived regional proposal and interim snapshot
+
+Prepared earlier November 15, 2026 following Alex's direction to prefer automatic subscription, then a checked-by-default choice, then an unchecked choice, as permitted for each customer. Geographic implementation is on hold. The unchecked interim snapshot below is superseded by the current implementation above.
+
+### Earlier verified interim setup
 
 - Hosted checkout is used on every device; website-only changes cannot establish how the hosted form behaves.
 - **Account settings → Storefront → Features → Marketing consent** exposes one global selection with three modes. Live UI and [official help](https://help.moonbase.sh/articles/3722015-account-features) showed no regional selector. Absence of a visible option does not rule out an undocumented vendor capability.
@@ -10,7 +42,7 @@ Prepared November 15, 2026 following Alex's direction to prefer automatic subscr
 - Lite's required-newsletter switch is now **off**, saved at both levels and verified after reload. Fresh signed-out checkout shows an unchecked **Keep me up to date with product updates and offers** choice. Global consent and the embedded SDK remain **OptIn** pending vendor confirmation.
 - Existing subscriber preferences, sync, prices, licenses and marketing-automation eligibility gates were preserved. No new account, license or customer marketing email was created by this check.
 
-## Proposed rules, subject to supported implementation
+### Regional rules proposed earlier, not implemented
 
 | Customer situation | Preferred model | Conditions before enabling |
 | --- | --- | --- |
@@ -25,7 +57,7 @@ The [FTC guide](https://www.ftc.gov/business-guidance/resources/can-spam-act-com
 
 [Canada's regulator](https://crtc.gc.ca/eng/internet/anti/reg.htm) and [Australia's regulator](https://www.acma.gov.au/avoid-sending-spam) require express or qualifying implied/inferred consent. [EDPB territorial-scope guidance](https://www.edpb.europa.eu/system/files/documents/files/file1/edpb_guidelines_3_2018_territorial_scope_after_public_consultation_en_1.pdf) concerns real circumstances, not a VPN exit-country exemption. [MaxMind explains](https://support.maxmind.com/knowledge-base/articles/maxmind-geolocation-accuracy) that VPN geolocation can locate the server rather than its user. No new location vendor, tracking script or fingerprinting has been added.
 
-## Capability questions and implementation sequence
+### Earlier regional capability questions and sequence
 
 1. Obtain Moonbase's supported approach for region-specific hosted marketing choices, an actual refusal at collection, settings precedence, location conflicts, evidence records and repeat-order unsubscribe preservation. A private support-message draft is prepared outside the public repository; it has not been sent.
 2. Choose a supported flow before adding code or changing the global model. Do not set global OptOut or checked-by-default while it would also apply to ineligible customers. The website's `auth.signUp.marketingConsent` option alone does not verify hosted-checkout behavior.
